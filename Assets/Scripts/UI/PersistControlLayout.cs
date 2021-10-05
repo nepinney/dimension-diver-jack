@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ControlLayout : MonoBehaviour
+public class PersistControlLayout : MonoBehaviour
 {
     public Toggle[] ControlLayoutToggles;
 

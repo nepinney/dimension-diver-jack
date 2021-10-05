@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VolumeSliders : MonoBehaviour
+public class PersistVolumeSliders : MonoBehaviour
 {
     public UnityEngine.UI.Slider VolumeSlider;
     public UnityEngine.UI.Slider SFXSlider;

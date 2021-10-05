@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MonoBehaviourSingleton<T> : MonoBehaviour
+public class Singleton<T> : MonoBehaviour
 	where T : Component
 {
 	private static T _instance;
@@ -31,7 +31,7 @@ public class MonoBehaviourSingleton<T> : MonoBehaviour
 }
 
 
-public class MonoBehaviourSingletonPersistent<T> : MonoBehaviour
+public class SingletonPersistent<T> : MonoBehaviour
 	where T : Component
 {
 	public static T Instance { get; private set; }

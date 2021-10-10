@@ -4,6 +4,8 @@ using UnityEngine;
 public class GameStateManager : Singleton<GameStateManager>
 {
 
+    public static bool enableKeyboard = true;
+
     public static bool isPaused = false;
 
     public GameObject pauseMenu;
@@ -49,5 +51,10 @@ public class GameStateManager : Singleton<GameStateManager>
         pauseButton.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
+    }
+
+    public int GetInt(string KeyName)
+    {
+        return PlayerPrefs.GetInt(KeyName);
     }
 }

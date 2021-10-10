@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
@@ -18,99 +19,124 @@ public class InputManager : Singleton<InputManager>
     public delegate void PlayerJumpEvent();
     public event PlayerJumpEvent OnPlayerJump;
 
-    private GameControls controls;
+    private GameStateManager state;
 
-    private GameStateManager gameController;
+    public bool enableKeyboard = true;
 
+    public TextMeshProUGUI directionField;
+    public TextMeshProUGUI firstTouchField;
+    public TextMeshProUGUI secondTouchField;
+    public GameObject player;
+
+   
     private void Awake()
     {
-        gameController = GameStateManager.Instance;
-        controls = new GameControls();
+        state = GameStateManager.Instance;
     }
 
     private void OnEnable()
     {
-        controls.Enable();
-        controls.GameState.PauseResume.performed += ctx => PausePressed(ctx);
-        controls.Player.Move.performed += ctx => ActivateHorizontalMove(ctx.ReadValue<Vector2>());
-        controls.Player.Jump.performed += ctx => ActivatePlayerJump();
+        int control_layout = state.GetInt("layout");
+        switch (control_layout)
+        {
+            case 1:
+                player.AddComponent<TouchInputController>();
+                break;
+            case 2:
+                // Add touch control scheme #2
+                break;
+            case 3:
+                // Add touch control scheme #3
+                break;
+        }
 
-        EnhancedTouchSupport.Enable();
-        UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerDown += FingerDown;
-        UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerUp += FingerUp;
-
-
+        if (enableKeyboard) player.AddComponent<KeyboardInputController>();
+        
     }
 
     private void OnDisable()
     {
-        controls.Disable();
-        controls.GameState.PauseResume.performed -= ctx => PausePressed(ctx);
-        controls.Player.Move.performed -= ctx => ActivateHorizontalMove(ctx.ReadValue<Vector2>());
-        controls.Player.Jump.performed -= ctx => ActivatePlayerJump();
 
-        EnhancedTouchSupport.Disable();
-        UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerDown -= FingerDown;
-        UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerUp -= FingerUp;
+        if (player != null)
+        {
+            KeyboardInputController key_input_controller;
+            if ((key_input_controller = player.GetComponent<KeyboardInputController>()) != null)
+            {
+                Destroy(key_input_controller, 0f);
+            }
+
+            TouchInputController touch_input_controller;
+            if ((touch_input_controller = player.GetComponent<TouchInputController>()) != null)
+            {
+                Destroy(touch_input_controller, 0f);
+            }
+        }
     }
-
-    private void ActivateHorizontalMove(Vector2 direction)
+    
+    public void ActivateHorizontalMove(Vector2 direction)
     {
-        //Debug.Log("Move: " + context.ReadValue<Vector2>().x);
         if (OnHorizontalMove != null) OnHorizontalMove(direction);
     }
 
-    private void ActivatePlayerJump()
+    public void ActivatePlayerJump()
     {
-        //Debug.Log("Jump!");
         if (OnPlayerJump != null) OnPlayerJump();
     }
 
-    private void PausePressed(InputAction.CallbackContext context)
+    public void PausePressed(InputAction.CallbackContext context)
     {
         if (OnPausePressed != null) OnPausePressed((float)context.time);
     }
 
-    private void FingerDown(Finger finger)
+
+
+    /* Touch input way number 1
+    private void Update()
     {
-        // Try find tapped target
-        //Vector2 worldCurrent = Camera.main.ScreenToWorldPoint(finger.screenPosition);
-        //Debug.Log("World coordinate of tap: " + worldCurrent);
-        //Debug.Log("Screen coordinate of tap: " + finger.screenPosition);
-
-        if (finger.screenPosition.x < Screen.width/3)
+        if (UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count > 0)
         {
-            //Debug.Log("Screen position " + finger.screenPosition.x + " < " + Screen.width / 3);
-            Vector2 left = new Vector2(-1, 0);
-            ActivateHorizontalMove(left);
-        }
+            foreach (UnityEngine.InputSystem.EnhancedTouch.Touch tch in UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches)
+            {
+                if (tch.phase == UnityEngine.InputSystem.TouchPhase.Began)
+                {
+                    if (tch.screenPosition.x > Screen.width / 3 && tch.screenPosition.x < (Screen.width - (Screen.width / 3)))
+                    {
+                        Debug.Log("Jump start time: " + tch.phase);
+                        ActivatePlayerJump();
+                        break;
+                    }
+                }
 
-        if (finger.screenPosition.x > (Screen.width - (Screen.width / 3)))
+                if (tch.screenPosition.x < Screen.width / 3)
+                {
+                    //Debug.Log("Screen position " + finger.screenPosition.x + " < " + Screen.width / 3);
+                    Vector2 left = new Vector2(-1, 0);
+                    dir = left;
+                    wasTouching = true;
+                    ActivateHorizontalMove(left);
+                }
+
+                if (tch.screenPosition.x > (Screen.width - (Screen.width / 3)))
+                {
+                    //Debug.Log("Screen position " + finger.screenPosition.x + " > " + (Screen.width - (Screen.width / 3)));
+                    Vector2 right = new Vector2(1, 0);
+                    dir = right;
+                    wasTouching = true;
+                    ActivateHorizontalMove(right);
+                }
+            }
+        }
+        else
         {
-            //Debug.Log("Screen position " + finger.screenPosition.x + " > " + (Screen.width - (Screen.width / 3)));
-            Vector2 right = new Vector2(1, 0);
-            ActivateHorizontalMove(right);
+            if (wasTouching == true && dir != new Vector2(0, 0))
+            {
+                Vector2 still = new Vector2(0, 0);
+                wasTouching = false;
+                dir = still;
+                ActivateHorizontalMove(still);
+            }
         }
-
-        if (finger.screenPosition.x > Screen.width / 3 && finger.screenPosition.x < (Screen.width - (Screen.width / 3)))
-        {
-            ActivatePlayerJump();
-        }
-
-        //Debug.Log("Got touch!");
-        //Collider2D collider = Physics2D.OverlapPoint(worldCurrent, LayerMask.GetMask("Default"));
-        //if (collider != null)
-        //{
-        //    Debug.Log("Detected collision!");
-
-        //}
-        //if (OnStartTouch != null && !GameStateManager.isPaused) OnStartTouch(finger.screenPosition, Time.time);
     }
+    */
 
-    private void FingerUp(Finger finger)
-    {
-        Vector2 still = new Vector2(0, 0);
-        ActivateHorizontalMove(still);
-    }
-    
 }

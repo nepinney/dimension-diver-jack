@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "35314b4c38323098",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "35314b4c38323098",
+        "name": "com.DefaultCompany.com.unity.template.mobile2D",
+        "processId": 3230,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,120 @@
             "deviceId": "35314b4c38323098",
             "name": "com.teslacoilsw.launcher",
             "processId": 22093,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 18016,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 18310,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 14337,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 16692,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 26838,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 31344,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 31641,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 2282,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 6557,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 19752,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 20022,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 25448,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 24034,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 3757,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 4452,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 16599,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 20872,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 29595,
+            "exited": false
+        },
+        {
+            "deviceId": "35314b4c38323098",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 3230,
             "exited": false
         }
     ],

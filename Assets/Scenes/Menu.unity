@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 1813786899}
   - component: {fileID: 1813786898}
   m_Layer: 0
-  m_Name: Menu Manager
+  m_Name: State Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1813786897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87fe6761425184fcbbb07deefb6021ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 3984d08ffec78441795e02d239a36467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1813786899
@@ -1355,7 +1355,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1813786898}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManager, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:

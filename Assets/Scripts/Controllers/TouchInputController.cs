@@ -99,11 +99,27 @@ public class TouchInputController : MonoBehaviour
         }
         else if (firstTouch == jump)
         {
-            // stop moving
-            xDirection = 0;
-            input_manager.directionField.text = "xDirection: " + xDirection;
-            input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
-
+            if (secondTouch == left || secondTouch == right)
+            {
+                // Go in direction of second
+                if (secondTouch == left)
+                {
+                    xDirection = -1;
+                }
+                else
+                {
+                    xDirection = 1;
+                }
+                input_manager.directionField.text = "xDirection: " + xDirection;
+                input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
+            }
+            else
+            {
+                // stop moving
+                xDirection = 0;
+                input_manager.directionField.text = "xDirection: " + xDirection;
+                input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
+            }
         }
         else if (firstTouch == waiting)
         {

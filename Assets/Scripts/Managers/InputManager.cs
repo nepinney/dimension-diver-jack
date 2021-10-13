@@ -23,9 +23,13 @@ public class InputManager : Singleton<InputManager>
 
     public bool enableKeyboard = true;
 
+    public GameObject touchDebugText;
     public TextMeshProUGUI directionField;
     public TextMeshProUGUI firstTouchField;
     public TextMeshProUGUI secondTouchField;
+
+    public GameObject buttonControls;
+
     public GameObject player;
 
    
@@ -40,13 +44,19 @@ public class InputManager : Singleton<InputManager>
         switch (control_layout)
         {
             case 1:
+                touchDebugText.SetActive(true);
                 player.AddComponent<TouchInputController>();
+                buttonControls.SetActive(false);
                 break;
             case 2:
-                // Add touch control scheme #2
+                // Add/enable touch control scheme #2
+                touchDebugText.SetActive(false);
+                buttonControls.SetActive(true);
                 break;
             case 3:
                 // Add touch control scheme #3
+                touchDebugText.SetActive(false);
+                buttonControls.SetActive(false);
                 break;
         }
 

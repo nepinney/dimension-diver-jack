@@ -1,5 +1,5 @@
 {
-    "name": "GameControls",
+    "name": "KeyboardActions",
     "maps": [
         {
             "name": "Player",
@@ -18,38 +18,6 @@
                     "type": "Button",
                     "id": "4bdec5af-d717-4cf4-ba99-ac2409cd4969",
                     "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "TouchPressOne",
-                    "type": "Button",
-                    "id": "3ba79c08-2363-49f4-b13d-e02b4b2b15fc",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "TouchPositionOne",
-                    "type": "PassThrough",
-                    "id": "92a62b14-c1a9-4be2-a1c3-e8117999b5fc",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "TouchPressTwo",
-                    "type": "Button",
-                    "id": "4668aeee-4875-45b5-b5fd-695dd918b064",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "TouchPositionTwo",
-                    "type": "PassThrough",
-                    "id": "d2af91b7-5cf2-44c0-a5a1-6920da1e801b",
-                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 }
@@ -118,50 +86,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "57be7a75-6237-4cbf-a92b-1d1ccd8a5daf",
-                    "path": "<Touchscreen>/touch0/press",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TouchPressOne",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "01e91443-7dbe-41a4-a81e-396582458327",
-                    "path": "<Touchscreen>/touch0/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TouchPositionOne",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "268e3a25-7041-4f37-afa3-9958a4b679ce",
-                    "path": "<Touchscreen>/touch1/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TouchPositionTwo",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a919dbda-017e-433a-9960-5b0b40aeee20",
-                    "path": "<Touchscreen>/touch1/press",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TouchPressTwo",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -13,12 +13,14 @@ public class CharacterInput : MonoBehaviour
 
     private void Awake()
     {
-        inputManager = InputManager.Instance;
+        //inputManager = GameObject.Find("Input Manager").GetComponent<InputManager>();
     }
 
     private void OnEnable()
     {
         // Subscribing to the event
+        inputManager = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        //inputManager = InputManager.Instance;
         inputManager.OnHorizontalMove += Move;
         inputManager.OnPlayerJump += Jump;
     }

@@ -70,6 +70,7 @@ public class GameStateManager : Singleton<GameStateManager>
         yield return null;
 
         //Begin to load the Scene you specify
+        //AsyncOperation asyncOperation = SceneManager.LoadSceneAsync();
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         //Don't let the Scene activate until you allow it to
         asyncOperation.allowSceneActivation = false;

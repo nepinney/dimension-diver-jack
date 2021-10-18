@@ -12,9 +12,6 @@ public class GameMenuButtonHandler : MonoBehaviour
     public delegate void ResumeGameEvent();
     public event ResumeGameEvent OnResumePressed;
 
-    public delegate void ReturnToMenuEvent();
-    public event ReturnToMenuEvent OnMainMenuPressed;
-
     public Button pauseButton;
     public Button playButton;
     public Button menuButton;

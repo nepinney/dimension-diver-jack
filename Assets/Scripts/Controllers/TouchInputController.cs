@@ -5,7 +5,11 @@ public class TouchInputController : MonoBehaviour
 {
 
     private InputManager input_manager;
+    //private UIManager ui;
     private TouchScreenActions ts_actions;
+
+    public delegate void DebugUpdateEvent(string field, int newValue);
+    public event DebugUpdateEvent OnDebugTextUpdate;
 
     private int xDirection = 0;                             // The x componenet of the vector being sent to move the player
     private int firstTouch = 0;                             // The "role" taken on by touch 1 (1 -> left, 0 -> not active, 2 -> right, 5 -> jump)
@@ -19,7 +23,7 @@ public class TouchInputController : MonoBehaviour
 
     public void Awake()
     {
-        input_manager = InputManager.Instance;
+        input_manager = GameObject.Find("Input Manager").GetComponent<InputManager>();
         ts_actions = new TouchScreenActions();
     }
 
@@ -46,7 +50,8 @@ public class TouchInputController : MonoBehaviour
         Vector2 touchPosition = new Vector2(ts_actions.Player.TouchPositionOne.ReadValue<Vector2>().x, 0);
         //Debug.Log("Finger 1!" + controls.Player.TouchPositionOne.ReadValue<Vector2>());
         firstTouch = MapTouchToAction(touchPosition);
-        input_manager.firstTouchField.text = "firstTouch: " + firstTouch;
+        OnDebugTextUpdate?.Invoke("firstTouchField", firstTouch);
+        //ui.firstTouchField.text = "firstTouch: " + firstTouch;
 
     }
 
@@ -62,7 +67,8 @@ public class TouchInputController : MonoBehaviour
             if (secondTouch == 0 || secondTouch == jump) // stop moving
             {
                 xDirection = 0;
-                input_manager.directionField.text = "xDirection: " + xDirection;
+                OnDebugTextUpdate?.Invoke("xDirectionField", xDirection);
+                //ui.directionField.text = "xDirection: " + xDirection;
                 input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
             }
             else if (secondTouch != jump) // go in direction of second touch
@@ -72,7 +78,8 @@ public class TouchInputController : MonoBehaviour
                 {
                     // Move player in direction of first touch - no need to activate new move
                     secondTouch = firstTouch;
-                    input_manager.secondTouchField.text = "secondTouch: " + secondTouch;
+                    OnDebugTextUpdate?.Invoke("secondTouchField", secondTouch);
+                    //ui.secondTouchField.text = "secondTouch: " + secondTouch;
                 }
                 else
                 {
@@ -81,9 +88,11 @@ public class TouchInputController : MonoBehaviour
                     {
                         // go left
                         secondTouch = left;
-                        input_manager.secondTouchField.text = "secondTouch: " + secondTouch;
+                        OnDebugTextUpdate?.Invoke("secondTouchField", secondTouch);
+                        //ui.secondTouchField.text = "secondTouch: " + secondTouch;
                         xDirection = -1;
-                        input_manager.directionField.text = "xDirection: " + xDirection;
+                        OnDebugTextUpdate?.Invoke("xDirectionField", xDirection);
+                        //ui.directionField.text = "xDirection: " + xDirection;
                         input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
                     }
                     else
@@ -91,7 +100,8 @@ public class TouchInputController : MonoBehaviour
                         // go right
                         secondTouch = right;
                         xDirection = 1;
-                        input_manager.directionField.text = "xDirection: " + xDirection;
+                        OnDebugTextUpdate?.Invoke("xDirectionField", xDirection);
+                        //ui.directionField.text = "xDirection: " + xDirection;
                         input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
                     }
                 }
@@ -110,14 +120,16 @@ public class TouchInputController : MonoBehaviour
                 {
                     xDirection = 1;
                 }
-                input_manager.directionField.text = "xDirection: " + xDirection;
+                OnDebugTextUpdate?.Invoke("xDirectionField", xDirection);
+                //ui.directionField.text = "xDirection: " + xDirection;
                 input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
             }
             else
             {
                 // stop moving
                 xDirection = 0;
-                input_manager.directionField.text = "xDirection: " + xDirection;
+                OnDebugTextUpdate?.Invoke("xDirectionField", xDirection);
+                //ui.directionField.text = "xDirection: " + xDirection;
                 input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
             }
         }
@@ -131,7 +143,8 @@ public class TouchInputController : MonoBehaviour
         }
 
         firstTouch = 0;
-        input_manager.firstTouchField.text = "firstTouch: " + firstTouch;
+        OnDebugTextUpdate?.Invoke("firstTouchField", firstTouch);
+        //ui.firstTouchField.text = "firstTouch: " + firstTouch;
     }
 
     private void SecondTouch()
@@ -139,7 +152,8 @@ public class TouchInputController : MonoBehaviour
         Vector2 touchPosition = new Vector2(ts_actions.Player.TouchPositionTwo.ReadValue<Vector2>().x, 0);
         //Debug.Log("Finger 2!" + controls.Player.TouchPositionTwo.ReadValue<Vector2>());
         secondTouch = MapTouchToAction(touchPosition);
-        input_manager.secondTouchField.text = "secondTouch: " + secondTouch;
+        OnDebugTextUpdate?.Invoke("secondTouchField", secondTouch);
+        //ui.secondTouchField.text = "secondTouch: " + secondTouch;
     }
 
     private void StopSecondTouch()
@@ -150,28 +164,32 @@ public class TouchInputController : MonoBehaviour
             if (firstTouch == jump) // if first touch hasnt cancelled jump and second touch has cancelled moving then stop moving
             {
                 xDirection = 0;
-                input_manager.directionField.text = "xDirection: " + xDirection;
+                OnDebugTextUpdate?.Invoke("xDirectionField", xDirection);
+                //ui.directionField.text = "xDirection: " + xDirection;
                 input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
             }
             else if (firstTouch == left) // first touch was moving left
             {
                 // resume going left
                 xDirection = -1;
-                input_manager.directionField.text = "xDirection: " + xDirection;
+                OnDebugTextUpdate?.Invoke("xDirectionField", xDirection);
+                //ui.directionField.text = "xDirection: " + xDirection;
                 input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
             }
             else if (firstTouch == right) // first touch was moving right
             {
                 // resume going right
                 xDirection = 1;
-                input_manager.directionField.text = "xDirection: " + xDirection;
+                OnDebugTextUpdate?.Invoke("xDirectionField", xDirection);
+                //ui.directionField.text = "xDirection: " + xDirection;
                 input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
             }
             else
             {
                 // stop moving
                 xDirection = 0;
-                input_manager.directionField.text = "xDirection: " + xDirection;
+                OnDebugTextUpdate?.Invoke("xDirectionField", xDirection);
+                //ui.directionField.text = "xDirection: " + xDirection;
                 input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
             }
         }
@@ -189,7 +207,8 @@ public class TouchInputController : MonoBehaviour
         }
 
         secondTouch = 0;
-        input_manager.secondTouchField.text = "secondTouch: " + secondTouch;
+        OnDebugTextUpdate?.Invoke("secondTouchField", secondTouch);
+        //ui.secondTouchField.text = "secondTouch: " + secondTouch;
     }
 
     private int MapTouchToAction(Vector2 touchPosition)
@@ -199,7 +218,8 @@ public class TouchInputController : MonoBehaviour
             if (firstTouch != left && secondTouch != left)
             {
                 xDirection -= 1;
-                input_manager.directionField.text = "xDirection: " + xDirection;
+                OnDebugTextUpdate?.Invoke("xDirectionField", xDirection);
+                //ui.directionField.text = "xDirection: " + xDirection;
                 input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
                 return left;
             }
@@ -214,7 +234,8 @@ public class TouchInputController : MonoBehaviour
             if (firstTouch != right && secondTouch != right)
             {
                 xDirection += 1;
-                input_manager.directionField.text = "xDirection: " + xDirection;
+                OnDebugTextUpdate?.Invoke("xDirectionField", xDirection);
+                //ui.directionField.text = "xDirection: " + xDirection;
                 input_manager.ActivateHorizontalMove(new Vector2(xDirection, 0));
                 return right;
             }

@@ -710,7 +710,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
-  m_Text: "Some things are better kept in secrecy. As the world evolved technologically
+  m_Text: "Some things are better kept in secrecy.\nAs the world evolved technologically
     so did the capacity of the human brain\u2026"
 --- !u!222 &1650211236
 CanvasRenderer:

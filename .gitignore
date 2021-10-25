@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+.clj-kondo/.cache/2021.10.20-SNAPSHOT/lock
+UserSettings/EditorUserSettings.asset
+UserSettings/EditorUserSettings.asset

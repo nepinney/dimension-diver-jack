@@ -5,6 +5,7 @@ public class CharacterInput : MonoBehaviour
 
     public CharacterController2D playerMover;
     public float speed = 35f;
+    public Animator animator;
 
     private InputManager inputManager;
     private float inputX = 0f;
@@ -36,6 +37,7 @@ public class CharacterInput : MonoBehaviour
     {
         inputX = direction.x;
         //Debug.Log("InputX set to: " + inputX);
+        animator.SetFloat("speed", Mathf.Abs(inputX));
     }
 
     public void Jump()

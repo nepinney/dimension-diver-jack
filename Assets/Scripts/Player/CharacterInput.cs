@@ -43,8 +43,13 @@ public class CharacterInput : MonoBehaviour
     public void Jump()
     {
         jump = true;
+        animator.SetBool("isJumping", true);
     }
 
+    public void onLanding()
+    {
+        animator.SetBool("isJumping", false);
+    }
 
     void FixedUpdate()
     {

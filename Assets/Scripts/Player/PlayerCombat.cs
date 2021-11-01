@@ -6,6 +6,18 @@ public class PlayerCombat : MonoBehaviour
 {
 
     public Animator animator;
+    
+    public Transform attackPoint_0;
+    public Transform attackPoint_1;
+    public Transform attackPoint_2;
+    public float attackRange_0 = 0.5f;
+    public float attackRange_1 = 0.5f;
+    public float attackRange_2 = 0.5f;
+    public LayerMask enemyLayers;
+
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -28,24 +40,59 @@ public class PlayerCombat : MonoBehaviour
     {
         // Play attack animation
         animator.SetTrigger("Attack_0");
-        // Detect enemies within range of attack
-        // Damage them
 
+        // Detect enemies within range of attack
+        Collider2D [] hitEnemies = Physics2D.OverlapCircleAll(attackPoint_0.position, attackRange_0, enemyLayers);
+        
+        // Damage them
+        foreach (Collider2D enemy in hitEnemies)
+        {
+
+        }
      }
+
+
+    void OnDrawGizmosSelected ()
+    {
+        if(attackPoint_0 == null)
+        return;         
+        if(attackPoint_1 == null)
+        return;         
+        if(attackPoint_2 == null)
+        return; 
+
+        Gizmos.DrawWireSphere(attackPoint_0.position, attackRange_0);
+        Gizmos.DrawWireSphere(attackPoint_1.position, attackRange_1);
+        Gizmos.DrawWireSphere(attackPoint_2.position, attackRange_2);
+    }
+
+
          void Attack_1 () 
     {
         // Play attack animation
         animator.SetTrigger("Attack_1");
-        // Detect enemies within range of attack
-        // Damage them
 
+        // Detect enemies within range of attack
+        Collider2D [] hitEnemies = Physics2D.OverlapCircleAll(attackPoint_1.position, attackRange_1, enemyLayers);
+        
+        // Damage them
+        foreach (Collider2D enemy in hitEnemies)
+        {
+
+        }
      }
          void Attack_2 () 
     {
         // Play attack animation
         animator.SetTrigger("Attack_2");
-        // Detect enemies within range of attack
-        // Damage them
 
+        // Detect enemies within range of attack
+        Collider2D [] hitEnemies = Physics2D.OverlapCircleAll(attackPoint_2.position, attackRange_2, enemyLayers);
+        
+        // Damage them
+        foreach (Collider2D enemy in hitEnemies)
+        {
+
+        }
      }
 }

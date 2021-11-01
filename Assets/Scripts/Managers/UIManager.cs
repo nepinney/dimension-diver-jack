@@ -24,7 +24,7 @@ public class UIManager : Singleton<UIManager>
 
     // Need TouchInputController to listen to the changes to update the debug text
     private TouchInputController touchController { get; set; }
-    private GameMenuButtonHandler gameMenuButtonHandler;
+    private GameMenuButtonHandler gameMenuButtonHandler;  
 
     private void OnEnable()
     {
@@ -36,9 +36,13 @@ public class UIManager : Singleton<UIManager>
     {
         // Unsubscribe from all currenlty listening events
         SceneManager.sceneLoaded -= GameUILoaded;
-        gameMenuButtonHandler.OnPausePressed -= OnPause;
-        gameMenuButtonHandler.OnResumePressed -= OnResume;
+        if (gameMenuButtonHandler)
+        {
+            gameMenuButtonHandler.OnPausePressed -= OnPause;
+            gameMenuButtonHandler.OnResumePressed -= OnResume;
+        }
         if (touchController && enableTouchDebugText) touchController.OnDebugTextUpdate -= UpdateDebugText;
+        //if (interactableObject) interactableObject.OnObjectPickup -= UpdateEquipSlot;
     }
 
     private void GameUILoaded(Scene scene, LoadSceneMode mode)
@@ -61,13 +65,22 @@ public class UIManager : Singleton<UIManager>
         firstTouchField = GameObject.Find("firstTouch").GetComponent<TextMeshProUGUI>();
         secondTouchField = GameObject.Find("secondTouch").GetComponent<TextMeshProUGUI>();
 
-        // Button Controls which are used to control the player with
+        // Button Controls which are used to control the player
         buttonControls = GameObject.Find("Button Controls");
 
         gameMenu = GameObject.Find("Pause Menu");
         menuButton = GameObject.Find("Menu Button").GetComponent<Button>();
         playButton = GameObject.Find("Play Button").GetComponent<Button>();
         pauseButton = GameObject.Find("Pause Button");
+        
+        //InitializeEquipSlots();
+
+        // If on one of the levels, deactivate the items menu
+        if (SceneManager.GetActiveScene().name != "Homebase")
+        {
+            GameObject itemsMenu = GameObject.Find("Item Menu");
+            itemsMenu.SetActive(false);
+        }
 
         // Initially set to true to get references to objects above
         gameMenu.SetActive(false);
@@ -122,4 +135,5 @@ public class UIManager : Singleton<UIManager>
         gameMenu.SetActive(false);
         pauseButton.SetActive(true);
     }
+        
 }

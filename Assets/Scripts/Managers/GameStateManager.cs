@@ -5,14 +5,11 @@ using UnityEngine.SceneManagement;
 //[DefaultExecutionOrder(-3)]
 public class GameStateManager : Singleton<GameStateManager>
 {
-
-    public delegate void UILoadedEvent(int intialLayout);
-    public event UILoadedEvent OnUILoaded;
-
     private GameMenuButtonHandler gameButtonMenuHandler;
 
     private void OnEnable()
     {
+        // Start the game time
         Time.timeScale = 1f;
 
         // Once the UI is loaded, we need the GameMenuButtonHandler script to listen for the pause and resume button clicks

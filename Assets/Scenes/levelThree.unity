@@ -296,11 +296,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2338232725346657100, guid: 1d67fd8dd24f64d6aa38e2dbd35e6200, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.6
+      value: 6.56
       objectReference: {fileID: 0}
     - target: {fileID: 2338232725346657100, guid: 1d67fd8dd24f64d6aa38e2dbd35e6200, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.4
+      value: 10.04
       objectReference: {fileID: 0}
     - target: {fileID: 2338232725346657100, guid: 1d67fd8dd24f64d6aa38e2dbd35e6200, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9311,11 +9311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4994876617930832523, guid: f04eb18a843764212aa65a49a175657e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.6
+      value: 6.56
       objectReference: {fileID: 0}
     - target: {fileID: 4994876617930832523, guid: f04eb18a843764212aa65a49a175657e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.4
+      value: 10.04
       objectReference: {fileID: 0}
     - target: {fileID: 4994876617930832523, guid: f04eb18a843764212aa65a49a175657e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9365,9 +9365,10 @@ GameObject:
   m_Component:
   - component: {fileID: 365840290}
   - component: {fileID: 365840289}
+  - component: {fileID: 365840291}
   m_Layer: 0
   m_Name: jumpBoost
-  m_TagString: Untagged
+  m_TagString: Jump Boost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9437,6 +9438,32 @@ Transform:
   m_Father: {fileID: 585628559}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!61 &365840291
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365840288}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.55, y: 0.56}
+    newSize: {x: 0.55, y: 0.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.55, y: 0.56}
+  m_EdgeRadius: 0
 --- !u!1 &440792468
 GameObject:
   m_ObjectHideFlags: 0
@@ -9798,11 +9825,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3814204398870143867, guid: 53329beb3978149ef976502d9576df36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.6
+      value: 6.56
       objectReference: {fileID: 0}
     - target: {fileID: 3814204398870143867, guid: 53329beb3978149ef976502d9576df36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.4
+      value: 10.04
       objectReference: {fileID: 0}
     - target: {fileID: 3814204398870143867, guid: 53329beb3978149ef976502d9576df36, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10029,9 +10056,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1371500198}
   - component: {fileID: 1371500197}
+  - component: {fileID: 1371500199}
   m_Layer: 0
   m_Name: jumpBoost 2
-  m_TagString: Untagged
+  m_TagString: Jump Boost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10101,6 +10129,32 @@ Transform:
   m_Father: {fileID: 585628559}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!61 &1371500199
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371500196}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.55, y: 0.56}
+    newSize: {x: 0.55, y: 0.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.55, y: 0.56}
+  m_EdgeRadius: 0
 --- !u!1 &1405257609
 GameObject:
   m_ObjectHideFlags: 0
@@ -10111,9 +10165,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1405257611}
   - component: {fileID: 1405257610}
+  - component: {fileID: 1405257612}
   m_Layer: 0
   m_Name: jumpBoost 3
-  m_TagString: Untagged
+  m_TagString: Jump Boost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10183,6 +10238,32 @@ Transform:
   m_Father: {fileID: 585628559}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!61 &1405257612
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405257609}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.55, y: 0.56}
+    newSize: {x: 0.55, y: 0.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.55, y: 0.56}
+  m_EdgeRadius: 0
 --- !u!4 &1433722872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2338232725346657100, guid: 1d67fd8dd24f64d6aa38e2dbd35e6200, type: 3}

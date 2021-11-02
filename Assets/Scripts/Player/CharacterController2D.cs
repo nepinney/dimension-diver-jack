@@ -11,6 +11,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
+	[SerializeField] private float playerSpeed = 10f;
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
@@ -18,6 +19,10 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+
+	private float boostTimer10s = 0;
+	private bool jumpBoosting = false;
+	private bool speedBoosting = false;
 
 	[Header("Events")]
 	[Space]
@@ -39,6 +44,47 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+	}
+
+	void Update(){
+		if(jumpBoosting){
+			boostTimer10s += Time.deltaTime; // increment timer each second
+			if (boostTimer10s >= 10){
+				jumpBoosting = false;
+				m_JumpForce = 600f;
+				boostTimer10s = 0;
+			}
+		}
+
+		if(speedBoosting){
+			boostTimer10s += Time.deltaTime; // increment timer each second
+			if (boostTimer10s >= 10){
+				speedBoosting = false;
+				playerSpeed = 10f;
+				boostTimer10s = 0;
+			}
+		}
+	}
+
+	// boost activate
+	void OnTriggerEnter2D(Collider2D boost){
+		if(jumpBoosting || speedBoosting){
+			// restart timer if still boosting
+			boostTimer10s = 0;
+		}
+		// for jump boost powerup
+		if(boost.tag == "Jump Boost"){
+			jumpBoosting = true;
+			m_JumpForce = 1000f;
+			Destroy(boost.gameObject);
+		}
+
+		// for jump boost powerup
+		if(boost.tag == "Speed Boost"){
+			playerSpeed = 30f;
+			speedBoosting = true;
+			Destroy(boost.gameObject);
+		}
 	}
 
 	private void FixedUpdate()
@@ -106,7 +152,7 @@ public class CharacterController2D : MonoBehaviour
 			}
 
 			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+			Vector3 targetVelocity = new Vector2(move * playerSpeed, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 

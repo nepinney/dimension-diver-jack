@@ -33,7 +33,7 @@ public class Life : MonoBehaviour
         }
 
         // If touched campfire on levelOne...
-        else if (col.name == "Campfire")
+        else if (col.name == "Campfire" || col.name == "Campfire(1)")
         {
             GameStateManager gsManager = GameObject.Find("Game State Manager").GetComponent<GameStateManager>();
             gsManager.ReturnHome();

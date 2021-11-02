@@ -69,6 +69,13 @@ public class UIManager : Singleton<UIManager>
         playButton = GameObject.Find("Play Button").GetComponent<Button>();
         pauseButton = GameObject.Find("Pause Button");
 
+        // If on one of the levels, deactivate the items menu
+        if (SceneManager.GetActiveScene().name != "Homebase")
+        {
+            GameObject itemsMenu = GameObject.Find("Item Menu");
+            itemsMenu.SetActive(false);
+        }
+
         // Initially set to true to get references to objects above
         gameMenu.SetActive(false);
 

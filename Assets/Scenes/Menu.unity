@@ -318,6 +318,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &658705646
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8228422550656454021, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_Name
+      value: Player Pref Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826709629841586694, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826709629841586694, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826709629841586694, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826709629841586694, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826709629841586694, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826709629841586694, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826709629841586694, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826709629841586694, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826709629841586694, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826709629841586694, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826709629841586694, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e5424340233e4ee68b4700fdbe38521, type: 3}
 --- !u!1 &688722062
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +715,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1308844386
 GameObject:
@@ -1123,7 +1180,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1125084773645370960
 MonoBehaviour:
@@ -2312,7 +2369,7 @@ RectTransform:
   - {fileID: 1125084774835089452}
   - {fileID: 1125084774063910672}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2783,8 +2840,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1125084774065280889}
-        m_TargetAssemblyTypeName: ControlLayout, Assembly-CSharp
+      - m_Target: {fileID: 1125084774065280893}
+        m_TargetAssemblyTypeName: PersistControlLayout, Assembly-CSharp
         m_MethodName: SetControlsLayout
         m_Mode: 2
         m_Arguments:
@@ -3120,22 +3177,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1125084774065280889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125084774065280892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 958768dc33d914fe7b8bf59d2945ac79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ControlLayoutToggles:
-  - {fileID: 1125084775200017469}
-  - {fileID: 1125084774441203559}
-  - {fileID: 1125084773963976373}
 --- !u!1 &1125084774065280892
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,7 +3187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1125084774065280895}
   - component: {fileID: 1125084774065280894}
-  - component: {fileID: 1125084774065280889}
+  - component: {fileID: 1125084774065280893}
   m_Layer: 5
   m_Name: Selections
   m_TagString: Untagged
@@ -3154,6 +3195,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1125084774065280893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125084774065280892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a6886320b4a45088f4f7344d9d56c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefManager: {fileID: 0}
+  ControlLayoutToggles:
+  - {fileID: 1125084775200017469}
+  - {fileID: 1125084774441203559}
+  - {fileID: 1125084773963976373}
 --- !u!114 &1125084774065280894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4503,8 +4561,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1125084774065280889}
-        m_TargetAssemblyTypeName: ControlLayout, Assembly-CSharp
+      - m_Target: {fileID: 1125084774065280893}
+        m_TargetAssemblyTypeName: PersistControlLayout, Assembly-CSharp
         m_MethodName: SetControlsLayout
         m_Mode: 2
         m_Arguments:
@@ -5835,9 +5893,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1125084774835089453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de99c1cfbf8e8430fb5f3bf5e136fca1, type: 3}
+  m_Script: {fileID: 11500000, guid: 53ab1ced6abb749c89be0122e985a1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefManager: {fileID: 0}
   VolumeSlider: {fileID: 1125084775355804807}
   SFXSlider: {fileID: 1125084775065705126}
 --- !u!222 &1125084774835089455
@@ -7034,8 +7093,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1125084774065280889}
-        m_TargetAssemblyTypeName: ControlLayout, Assembly-CSharp
+      - m_Target: {fileID: 1125084774065280893}
+        m_TargetAssemblyTypeName: PersistControlLayout, Assembly-CSharp
         m_MethodName: SetControlsLayout
         m_Mode: 2
         m_Arguments:

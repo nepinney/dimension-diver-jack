@@ -5,14 +5,11 @@ using UnityEngine.SceneManagement;
 //[DefaultExecutionOrder(-3)]
 public class GameStateManager : Singleton<GameStateManager>
 {
-
-    public delegate void UILoadedEvent(int intialLayout);
-    public event UILoadedEvent OnUILoaded;
-
     private GameMenuButtonHandler gameButtonMenuHandler;
 
     private void OnEnable()
     {
+        // Start the game time
         Time.timeScale = 1f;
 
         // Once the UI is loaded, we need the GameMenuButtonHandler script to listen for the pause and resume button clicks
@@ -70,7 +67,7 @@ public class GameStateManager : Singleton<GameStateManager>
         yield return null;
 
         //Begin to load the Scene you specify
-        //AsyncOperation asyncOperation = SceneManager.LoadSceneAsync();
+        // TODO Save level progres, fetch next level and load
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         //Don't let the Scene activate until you allow it to
         asyncOperation.allowSceneActivation = false;

@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class PersistVolumeSliders : MonoBehaviour
 {
-    public PlayerPrefManager prefManager;
+    private PlayerPrefManager prefManager;
 
     public UnityEngine.UI.Slider VolumeSlider;
     public UnityEngine.UI.Slider SFXSlider;
 
     void OnEnable() {
         prefManager = GameObject.Find("Player Pref Manager").GetComponent<PlayerPrefManager>();
-        LoadPlayerPrefs();
+        if (prefManager) LoadPlayerPrefs();
     }
 
     void LoadPlayerPrefs()

@@ -53,22 +53,25 @@ public class GameStateManager : Singleton<GameStateManager>
         // Press "T" for quick access to load level from Hombase
         if (Input.GetKeyDown(KeyCode.T) && SceneManager.GetActiveScene().name != "Menu")
         {
-            LoadLevel();
+            PlayerPrefManager prefManager = GameObject.Find("Player Pref Manager").GetComponent<PlayerPrefManager>();
+            prefManager.IncrementLevelProgress();
+            LoadLevel(prefManager.GetCurrentLevelProgress());
         }
     }
 
-    public void LoadLevel()
+    public void LoadLevel(int level)
     {
-        StartCoroutine(NextLevel());
+        StartCoroutine(NextLevel(level));
     }
 
-    IEnumerator NextLevel()
+    IEnumerator NextLevel(int levelNumber)
     {
         yield return null;
+        Debug.Log("Loading level: " + levelNumber);
 
         //Begin to load the Scene you specify
         // TODO Save level progres, fetch next level and load
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(levelNumber.ToString());
         //Don't let the Scene activate until you allow it to
         asyncOperation.allowSceneActivation = false;
         //Debug.Log("Pro :" + asyncOperation.progress);

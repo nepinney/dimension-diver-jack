@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Life : MonoBehaviour
 {
@@ -24,17 +25,22 @@ public class Life : MonoBehaviour
             restart = true;
             timer = 0.0f;
         }
-
-        // If touched campfire on homebase...
-        else if (col.name == "CampfireHome")
+        else if (col.name == "Level Portal")
+        {
+            PlayerPrefManager prefManager = GameObject.Find("Player Pref Manager").GetComponent<PlayerPrefManager>();
+            int currentLevel = prefManager.GetCurrentLevelProgress();
+            GameStateManager gsManager = GameObject.Find("Game State Manager").GetComponent<GameStateManager>();
+            gsManager.LoadLevel(currentLevel);
+        }
+        else if (col.name == "Home Portal")
         {
             GameStateManager gsManager = GameObject.Find("Game State Manager").GetComponent<GameStateManager>();
-            gsManager.LoadLevel();
+            gsManager.ReturnHome();
         }
-
-        // If touched campfire on levelOne...
-        else if (col.name == "Campfire" || col.name == "Campfire(1)")
+        else if (col.name == "Level End Portal")
         {
+            PlayerPrefManager prefManager = GameObject.Find("Player Pref Manager").GetComponent<PlayerPrefManager>();
+            if (SceneManager.GetActiveScene().name == prefManager.GetCurrentLevelProgress().ToString()) prefManager.IncrementLevelProgress();
             GameStateManager gsManager = GameObject.Find("Game State Manager").GetComponent<GameStateManager>();
             gsManager.ReturnHome();
         }

@@ -1,36 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PersistVolumeSliders : MonoBehaviour
 {
+    public PlayerPrefManager prefManager;
+
     public UnityEngine.UI.Slider VolumeSlider;
     public UnityEngine.UI.Slider SFXSlider;
 
-    void Awake() {
+    void OnEnable() {
+        prefManager = GameObject.Find("Player Pref Manager").GetComponent<PlayerPrefManager>();
         LoadPlayerPrefs();
     }
 
     void LoadPlayerPrefs()
     {
-        VolumeSlider.value = GetInt("volume");
-        SFXSlider.value = GetInt("sfx");
-    }
-
-    public void SetInt(string KeyName, int Value) {
-        PlayerPrefs.SetInt(KeyName, Value);
-    }
-
-    public int GetInt(string KeyName) {
-        return PlayerPrefs.GetInt(KeyName);
+        VolumeSlider.value = prefManager.GetVolume();
+        SFXSlider.value = prefManager.GetSFX();
     }
 
     public void SetVolume(UnityEngine.UI.Slider obj) {
-        SetInt("volume", (int)Mathf.Round(obj.value));
+        prefManager.SetVolume(obj.value);
     }
 
     public void SetSFX(UnityEngine.UI.Slider obj) {
-        SetInt("sfx", (int)Mathf.Round(obj.value));
-
+        prefManager.SetSFX(obj.value);
     }
 }

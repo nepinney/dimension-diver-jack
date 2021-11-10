@@ -1,45 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PersistControlLayout : MonoBehaviour
 {
+    public PlayerPrefManager prefManager;
+
     public Toggle[] ControlLayoutToggles;
 
-    void Awake() {
+    void Start() {
+        prefManager = GameObject.Find("Player Pref Manager").GetComponent<PlayerPrefManager>();
         LoadPlayerPrefs();
     }
 
     void LoadPlayerPrefs()
     {
-        int layout = GetInt("layout");
-        ControlLayoutToggles[layout-1].isOn = true;
-    }
-
-    public void SetInt(string KeyName, int Value) {
-        PlayerPrefs.SetInt(KeyName, Value);
-    }
-
-    public int GetInt(string KeyName) {
-        return PlayerPrefs.GetInt(KeyName);
+        Debug.Log("Got control layout: " + prefManager.GetControlLayout());
+        ControlLayoutToggles[prefManager.GetControlLayout()-1].isOn = true;
     }
 
     public void SetControlsLayout(Toggle toggle) {
         if (toggle.isOn) {
-            int layout = 0;
+            int newLayout = 0;
             switch (toggle.name) {
                 case "One":
-                    layout = 1;
+                    newLayout = 1;
                     break;
                 case "Two":
-                    layout = 2;
+                    newLayout = 2;
                     break;
                 case "Three":
-                    layout = 3;
+                    newLayout = 3;
                     break;
             }
-            SetInt("layout", layout);
+            prefManager.SetControlLayout(newLayout);
         }
     }
 

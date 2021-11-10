@@ -4,6 +4,7 @@ public class Life : MonoBehaviour
 {
     private float startx;
     private float starty;
+    public AudioSource deathSound;
 
     private float timer = 0.0f;
     private bool restart = false;
@@ -21,6 +22,7 @@ public class Life : MonoBehaviour
         // If fallen off map...
         if (col.name == "Death Box")
         {
+            deathSound.Play();
             restart = true;
             timer = 0.0f;
         }
@@ -33,7 +35,7 @@ public class Life : MonoBehaviour
         }
 
         // If touched campfire on levelOne...
-        else if (col.name == "Campfire" || col.name == "Campfire(1)")
+        else if (col.name == "Campfire")
         {
             GameStateManager gsManager = GameObject.Find("Game State Manager").GetComponent<GameStateManager>();
             gsManager.ReturnHome();

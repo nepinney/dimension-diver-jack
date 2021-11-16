@@ -33,7 +33,7 @@ public class SceneChanger : MonoBehaviour
         yield return null;
 
         //Begin to load the Scene you specify
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("Homebase");
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("storyIntro");
         //Don't let the Scene activate until you allow it to
         asyncOperation.allowSceneActivation = false;
         Debug.Log("Pro :" + asyncOperation.progress);

@@ -25,8 +25,10 @@ public class PlayerPrefManager : Singleton<PlayerPrefManager>
     public int backpackSlotCount;
 
     [SerializeField]
-    private string[] inventoryObjectNames;
+    private bool debugMode; //TODO code for testing
 
+    [SerializeField]
+    private string[] inventoryObjectNames;
     [SerializeField]
     private GameObject[] inventoryObjectPrefabs;
 
@@ -42,8 +44,39 @@ public class PlayerPrefManager : Singleton<PlayerPrefManager>
         }
 
         // TODO CONDITIONAL CODE FOR RESETTING PLAYER PREF INFO DURING TESTING
-        PlayerPrefs.SetInt("initialized", 0);
-        if (GetInitialized() != 1) DefaultPlayerPrefs();
+        if (debugMode)
+        {
+            SetInitialized(0);
+            if (GetInitialized() == 0) DefaultPlayerPrefs();
+            SkipIntroScene();
+        }
+        else
+        {
+            //Debug.Log(GetInitialized());
+            if (GetInitialized() == 0)
+            {
+                DefaultPlayerPrefs();
+                SetInitialized(1);
+            }
+            else
+            {
+                Debug.Log("Skipping");
+                SkipIntroScene();
+            }
+            
+        }
+
+        /*  TODO Code for deploying game
+        if (GetInitialized() == 0)
+        {
+            DefaultPlayerPrefs();
+            SetInitialized(1);
+        } 
+        else
+        {
+            SkipIntroScene();
+        }
+        */
     }
 
     void DefaultPlayerPrefs()
@@ -72,8 +105,14 @@ public class PlayerPrefManager : Singleton<PlayerPrefManager>
             SetObjectStatus(kvp.Key, 0);
         }
 
+        SetLevelProgress(1);
+
     }
 
+    void SkipIntroScene()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 
     /**
      * Initialized
@@ -124,7 +163,7 @@ public class PlayerPrefManager : Singleton<PlayerPrefManager>
 
     public void SetControlLayout(int value)
     {
-        Debug.Log("Set control layout to: " + value);
+        //Debug.Log("Set control layout to: " + value);q
         PlayerPrefs.SetInt("layout", value);
     }
 
@@ -158,17 +197,21 @@ public class PlayerPrefManager : Singleton<PlayerPrefManager>
     /**
      * Control Layout
      */
-    //public string [] GetInventory()
-    //{
+    public int GetCurrentLevelProgress()
+    {
+        return PlayerPrefs.GetInt("LevelProgress");
+    }
 
-    //    return PlayerPrefs.GetInt("layout");
-    //}
+    public void SetLevelProgress(int currentLevel)
+    {
+        PlayerPrefs.SetInt("LevelProgress", currentLevel);
+    }
 
-    //public void SetControlLayout(int value)
-    //{
-    //    Debug.Log("Set control layout to: " + value);
-    //    PlayerPrefs.SetInt("layout", value);
-    //}
+    public void IncrementLevelProgress()
+    {
+        Debug.Log("Incrementing level progress!");
+        PlayerPrefs.SetInt("LevelProgress", GetCurrentLevelProgress() + 1);
+    }
 
 
 }

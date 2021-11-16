@@ -70,4 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 852702bb37be347e5958aa35205e9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followX: 1
+  followY: 0
+  keepOffset: 0
   target: {fileID: 0}

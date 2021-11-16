@@ -20,8 +20,6 @@ public class InteractableObject : MonoBehaviour
     public delegate void OnObjectpickupEvent(string objectName);
     public event OnObjectpickupEvent OnObjectPickup;
 
-    private string[] pickupableObjects = new string[] {"Shovel", "Flashlight", "Key", "Axe"};
-
     private void OnTriggerEnter2D(Collider2D col)
     {
         // Need to check which collision happened or else all isTrigger collisions will fire this event
@@ -40,9 +38,14 @@ public class InteractableObject : MonoBehaviour
 
     private bool isPickupableObject(string objectName)
     {
-        foreach (string item in pickupableObjects)
+        PlayerPrefManager prefManager = GameObject.Find("Player Pref Manager").GetComponent<PlayerPrefManager>();
+        foreach (string item in prefManager.inventoryObjects.Keys)
         {
-            if (item == objectName) return true;
+            if (item == objectName)
+            {
+                Debug.Log("Item is in inventory!");
+                return true;
+            }
         }
         return false;
     }

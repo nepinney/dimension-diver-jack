@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMover: {fileID: 638520223}
-  speed: 90
+  speed: 55
   animator: {fileID: 563749685019124383}
 --- !u!114 &638520223
 MonoBehaviour:

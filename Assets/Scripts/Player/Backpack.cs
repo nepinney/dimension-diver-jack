@@ -67,26 +67,37 @@ public class Backpack : MonoBehaviour
     {
         // Remove from map
         GameObject objectOver = GameObject.Find(objectName);
-        objectOver.SetActive(false);
-
-        // Put item in inventory
-        prefManager.SetObjectStatus(objectName, 1);
-
-        // Update the equip slot to show new object
-
-        // Check backpack slots to see if empty or not
-        //int[] backpackSlots = new int[] { 0, 1, 2 };
-
-        foreach (BackpackSlot slot in backpackSlots)
+        // Sometimes object over is null im guessing it gets called more than once so wrapped in if so it only executes once
+        if (objectOver)
         {
-            // Find empty slot to put the image of the new obejct in
-            if (!slot.isSlotActive)
+            objectOver.SetActive(false);
+
+            // Put item in inventory
+            prefManager.SetObjectStatus(objectName, 1);
+
+            // Update the equip slot to show new object
+
+            // Check backpack slots to see if empty or not
+            //int[] backpackSlots = new int[] { 0, 1, 2 };
+
+            bool putInEmptySlot = false;
+            foreach (BackpackSlot slot in backpackSlots)
             {
-                slot.AddItemToSlot(objectName);
-                break;
+                // Find empty slot to put the image of the new obejct in
+                if (!slot.isSlotActive)
+                {
+                    slot.AddItemToSlot(objectName);
+                    putInEmptySlot = true;
+                    break;
+                }
+            }
+            if (!putInEmptySlot)
+            {
+                // Put item in first slot
+                backpackSlots[0].ReplaceItem(objectName);
+                //backpackSlots[0].AddItemToSlot(objectName);
             }
         }
-
     }
 
     public bool isInventoryItemAlreadyInBackpack(string objectName)

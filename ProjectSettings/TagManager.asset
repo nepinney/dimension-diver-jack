@@ -13,7 +13,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - Enemies
+  - Bounds
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 1180973467
+    locked: 0
+  - name: Objects
+    uniqueID: 2605145249
     locked: 0
   - name: Player
     uniqueID: 2927436851

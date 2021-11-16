@@ -25,7 +25,7 @@ public class PlayerPrefManager : Singleton<PlayerPrefManager>
     public int backpackSlotCount;
 
     [SerializeField]
-    private bool firstLoad; //TODO code for testing
+    private bool debugMode; //TODO code for testing
 
     [SerializeField]
     private string[] inventoryObjectNames;
@@ -44,15 +44,26 @@ public class PlayerPrefManager : Singleton<PlayerPrefManager>
         }
 
         // TODO CONDITIONAL CODE FOR RESETTING PLAYER PREF INFO DURING TESTING
-        if (firstLoad)
+        if (debugMode)
         {
             SetInitialized(0);
             if (GetInitialized() == 0) DefaultPlayerPrefs();
+            SkipIntroScene();
         }
         else
         {
-            SetInitialized(1);
-            SkipIntroScene();
+            //Debug.Log(GetInitialized());
+            if (GetInitialized() == 0)
+            {
+                DefaultPlayerPrefs();
+                SetInitialized(1);
+            }
+            else
+            {
+                Debug.Log("Skipping");
+                SkipIntroScene();
+            }
+            
         }
 
         /*  TODO Code for deploying game

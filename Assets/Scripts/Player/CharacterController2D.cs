@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
-	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
+	[SerializeField] private float m_JumpForce = 500f;							// Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
@@ -23,6 +23,10 @@ public class CharacterController2D : MonoBehaviour
 	private float boostTimer10s = 0;
 	private bool jumpBoosting = false;
 	private bool speedBoosting = false;
+
+	public AudioSource jumpSound;
+	public AudioSource walkSound;
+	public AudioSource boostSound;
 
 	[Header("Events")]
 	[Space]
@@ -77,6 +81,7 @@ public class CharacterController2D : MonoBehaviour
 			jumpBoosting = true;
 			m_JumpForce = 1000f;
 			Destroy(boost.gameObject);
+			boostSound.Play();
 		}
 
 		// for jump boost powerup
@@ -84,6 +89,7 @@ public class CharacterController2D : MonoBehaviour
 			playerSpeed = 30f;
 			speedBoosting = true;
 			Destroy(boost.gameObject);
+			boostSound.Play();
 		}
 	}
 
@@ -151,6 +157,7 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 
+			walkSound.Play();
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * playerSpeed, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
@@ -172,6 +179,7 @@ public class CharacterController2D : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
+			jumpSound.Play();
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));

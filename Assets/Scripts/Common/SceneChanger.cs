@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class HomebaseLoader : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
     public Text progressText;
     public Button playButton;
@@ -36,12 +36,12 @@ public class HomebaseLoader : MonoBehaviour
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("Homebase");
         //Don't let the Scene activate until you allow it to
         asyncOperation.allowSceneActivation = false;
-        //Debug.Log("Pro :" + asyncOperation.progress);
+        Debug.Log("Pro :" + asyncOperation.progress);
         //When the load is still in progress, output the Text and progress bar
         while (!asyncOperation.isDone)
         {
             //Output the current progress
-            progressText.text = (asyncOperation.progress * 100) + "%";
+            progressText.text = "Loading progress: " + (asyncOperation.progress * 100) + "%";
 
             // Check if the load has finished
             if (asyncOperation.progress >= 0.9f)

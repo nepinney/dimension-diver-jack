@@ -13,8 +13,9 @@ public class portalManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("Called the function");
         // get the player object
-        playerTeleport = GameObject.FindGameObjectWithTag("Player");
+        playerTeleport = GameObject.Find("Player");
         // get the ridgidbody of the player
         rigidBodyPlayer = playerTeleport.GetComponent<Rigidbody2D>();
         // set the player position to the specified x and y values

@@ -80,7 +80,6 @@ GameObject:
   - component: {fileID: 8128152078210248378}
   - component: {fileID: 3157698350405872993}
   - component: {fileID: 2362681669659722509}
-  - component: {fileID: 1337666341}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -278,6 +277,9 @@ MonoBehaviour:
   m_CeilingCheck: {fileID: 485880004}
   m_CrouchDisableCollider: {fileID: 0}
   playerSpeed: 10
+  jumpSound: {fileID: 0}
+  walkSound: {fileID: 0}
+  boostSound: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -308,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f878f24c39134ec4aef6d941e741fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 0}
 --- !u!114 &8128152078210248378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,28 +362,6 @@ MonoBehaviour:
   - {fileID: 0}
   shovelControls: {fileID: 0}
   possibleNewObject: 
---- !u!114 &1337666341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177129654999633006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de2d1546eb884b045b1e4df7c58ce3b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 563749685019124383}
-  attackPoint_0: {fileID: 0}
-  attackPoint_1: {fileID: 0}
-  attackPoint_2: {fileID: 0}
-  attackRange_0: 0.5
-  attackRange_1: 0.5
-  attackRange_2: 0.5
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &5031630772793258482
 GameObject:
   m_ObjectHideFlags: 0

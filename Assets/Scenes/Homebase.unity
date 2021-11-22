@@ -410,7 +410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3341736541374896712, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
       propertyPath: m_SortingLayerID
-      value: -195401267
+      value: 699867001
       objectReference: {fileID: 0}
     - target: {fileID: 3341736541374896719, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
       propertyPath: m_RootOrder
@@ -532,7 +532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7524614495146895737, guid: cdd5a10e271082141b39cb42619c647f, type: 3}
       propertyPath: m_SortingLayerID
-      value: -195401267
+      value: 699867001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd5a10e271082141b39cb42619c647f, type: 3}
@@ -2074,7 +2074,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -195401267
+  m_SortingLayerID: 699867001
   m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 6732753838260750580, guid: 88b0a5cb92c0c6547a066bc100c8636c, type: 3}
@@ -6500,7 +6500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5327356252430756489, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
       propertyPath: m_SortingLayerID
-      value: -195401267
+      value: 699867001
       objectReference: {fileID: 0}
     - target: {fileID: 5327356252430756502, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
       propertyPath: m_Name
@@ -6765,7 +6765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3355088914966418730, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
       propertyPath: m_SortingLayerID
-      value: -195401267
+      value: 699867001
       objectReference: {fileID: 0}
     - target: {fileID: 3355088914966418731, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
       propertyPath: m_RootOrder
@@ -6960,7 +6960,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9047619, y: 1}
+    m_SensorSize: {x: 2.316265, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9982,7 +9982,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4994876617016935419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.383977, y: 1.5108999, z: -10}
+  m_LocalPosition: {x: -6.195297, y: 1.5096701, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4994876617412339270}

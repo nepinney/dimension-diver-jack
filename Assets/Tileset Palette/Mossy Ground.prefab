@@ -254,8 +254,8 @@ Tilemap:
   - first: {x: -2, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 21
-      m_TileSpriteIndex: 21
+      m_TileIndex: 22
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -345,7 +345,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 16
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 21
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -425,7 +425,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 10
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -465,7 +465,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -505,7 +505,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -542,11 +542,19 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: f8ecf0e8759c645d98453af2fabfe3f5, type: 2}
   - m_RefCount: 1
+<<<<<<< Updated upstream:Assets/Tileset Palette/Mossy Ground.prefab
     m_Data: {fileID: 11400000, guid: 1005cb16b350a42d9afd1a2d01e38e6a, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 6a096885835834827951e559e8296322, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 960b62d5fb691438db0d033f60ce6829, type: 2}
+=======
+    m_Data: {fileID: 11400000, guid: dc0b5d07cafba4eb89f610e0a3f91d2c, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 998dfa6bd140d43d3a1b44d3f8aed833, type: 2}
+>>>>>>> Stashed changes:Assets/Level 1/Level One Ground.prefab
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 5da3ffe249ecf45a79787424359be75e, type: 2}
   - m_RefCount: 1
@@ -632,8 +640,8 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b6771c2df7d814c79942d97b038a272b, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 7780190520650127750, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 1036836331014718058, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
@@ -641,7 +649,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -5249700988863797070, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 7789460486736427789, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
+    m_Data: {fileID: 7780190520650127750, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -2891453398403303555, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
@@ -653,7 +661,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -3487523447489209345, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -5569898554837922632, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
+    m_Data: {fileID: 7789460486736427789, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -3685418513897516578, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
@@ -665,7 +673,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -835656968662149559, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -4102537442370791014, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
+    m_Data: {fileID: -5569898554837922632, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -5072850715659334932, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
@@ -675,8 +683,8 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -524877543031904614, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -3872889320325841034, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
-  - m_RefCount: 1
+    m_Data: {fileID: -4102537442370791014, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
+  - m_RefCount: 2
     m_Data: {fileID: 4946514624398523938, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -5036600939746470205, guid: 5d86c1402f6cf42f68ac59adbf7820aa, type: 3}
@@ -752,6 +760,15 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 49
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< Updated upstream:Assets/Tileset Palette/Mossy Ground.prefab
+=======
+  - m_RefCount: 0
+    m_Data: {r: 0.7422475, g: 0.43011937, b: 0.4917737, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 0.8713832, g: 0.48569596, b: 0.4946772, a: 1}
+  - m_RefCount: 1
+    m_Data: {r: 0.79029304, g: 0.50926226, b: 0.51673764, a: 1}
+>>>>>>> Stashed changes:Assets/Level 1/Level One Ground.prefab
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -868,7 +885,11 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+<<<<<<< Updated upstream:Assets/Tileset Palette/Mossy Ground.prefab
 --- !u!114 &6091748952720004657
+=======
+--- !u!114 &6496282740072698223
+>>>>>>> Stashed changes:Assets/Level 1/Level One Ground.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

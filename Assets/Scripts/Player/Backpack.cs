@@ -16,6 +16,9 @@ public class Backpack : MonoBehaviour
 
     //Game objects available to pickup
     public GameObject shovelControls;
+    public GameObject keyControls;
+    public GameObject axeControls;
+    public GameObject flashlightControls;
     public string possibleNewObject;
 
     private void OnEnable()
@@ -59,6 +62,13 @@ public class Backpack : MonoBehaviour
 
             shovelControls = GameObject.Find("Shovel Controls");
             shovelControls.SetActive(false);
+            flashlightControls = GameObject.Find("Flashlight Controls");
+            flashlightControls.SetActive(false);
+            keyControls = GameObject.Find("Key Controls");
+            keyControls.SetActive(false);
+            axeControls = GameObject.Find("Axe Controls");
+            axeControls.SetActive(false);
+            
         }
     }
    
@@ -144,9 +154,27 @@ public class Backpack : MonoBehaviour
         {
             case "Shovel":
                 shovelControls.SetActive(true);
+                axeControls.SetActive(false);
+                flashlightControls.SetActive(false);
+                keyControls.SetActive(false);
                 break;
             case "Key":
-                Debug.Log("No Key controls yet");
+                shovelControls.SetActive(false);
+                axeControls.SetActive(false);
+                flashlightControls.SetActive(false);
+                keyControls.SetActive(true);
+                break;
+            case "Flashlight":
+                shovelControls.SetActive(false);
+                axeControls.SetActive(false);
+                flashlightControls.SetActive(true);
+                keyControls.SetActive(false);
+                break;
+            case "Axe":
+                shovelControls.SetActive(false);
+                axeControls.SetActive(true);
+                flashlightControls.SetActive(false);
+                keyControls.SetActive(false);
                 break;
         }
     }

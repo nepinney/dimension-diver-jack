@@ -21,6 +21,8 @@ public class UIManager : Singleton<UIManager>
     public Button menuButton;
     public Button playButton;
     public GameObject pauseButton;
+    public GameObject messageBox;
+    public GameObject messageText;
 
     // Need TouchInputController to listen to the changes to update the debug text
     private TouchInputController touchController { get; set; }
@@ -68,6 +70,8 @@ public class UIManager : Singleton<UIManager>
         menuButton = GameObject.Find("Menu Button").GetComponent<Button>();
         playButton = GameObject.Find("Play Button").GetComponent<Button>();
         pauseButton = GameObject.Find("Pause Button");
+        messageBox = GameObject.Find("MessageBox");
+        messageText = GameObject.Find("MessageText");
 
         // If on one of the levels, deactivate the items menu
         if (SceneManager.GetActiveScene().name != "Homebase")

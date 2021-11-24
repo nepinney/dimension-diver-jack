@@ -1393,7 +1393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backpackSlotCount: 1
-  debugMode: 0
+  debugMode: 1
   inventoryObjectNames:
   - Shovel
   - Key

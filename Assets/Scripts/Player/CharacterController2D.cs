@@ -27,6 +27,8 @@ public class CharacterController2D : MonoBehaviour
 	public AudioSource jumpSound;
 	public AudioSource walkSound;
 	public AudioSource boostSound;
+	private int waterCounter = 0;
+    private int airCounter = 0;
 
 	[Header("Events")]
 	[Space]
@@ -91,6 +93,16 @@ public class CharacterController2D : MonoBehaviour
 			Destroy(boost.gameObject);
 			boostSound.Play();
 		}
+
+		if (boost.gameObject.tag == "waterModule"){
+        	Destroy (boost.gameObject);
+        	waterCounter++;
+    	}
+
+    	if (boost.gameObject.tag == "airModule") {
+        	Destroy (boost.gameObject);
+        	airCounter++;
+    	}
 	}
 
 	private void FixedUpdate()
@@ -157,7 +169,7 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 
-			walkSound.Play();
+			//walkSound.Play();
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * playerSpeed, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character

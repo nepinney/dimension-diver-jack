@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Jump Boost
+  - airModule
+  - waterModule
   layers:
   - Default
   - TransparentFX

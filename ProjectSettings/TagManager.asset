@@ -16,7 +16,7 @@ TagManager:
   - UI
   - Player
   - Bounds
-  - 
+  - Enemies
   - 
   - 
   - 
@@ -58,4 +58,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2927436851
+    locked: 0
+  - name: Enemies
+    uniqueID: 699867001
     locked: 0

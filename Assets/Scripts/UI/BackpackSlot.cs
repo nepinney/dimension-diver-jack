@@ -81,6 +81,7 @@ public class BackpackSlot : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
         prefManager.SetBackpackSlotStatus(slotNumber, newObjectName);
         GameObject slotObject = prefManager.inventoryObjects[newObjectName];
         activeClone = Instantiate(slotObject, GetComponent<RectTransform>());
+        activeClone.SetActive(true);
         RemoveHighlight();
         readyForSwap = false;
     }

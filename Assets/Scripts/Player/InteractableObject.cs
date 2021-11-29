@@ -43,7 +43,6 @@ public class InteractableObject : MonoBehaviour
         {
             if (item == objectName)
             {
-                Debug.Log("Item is in inventory!");
                 return true;
             }
         }

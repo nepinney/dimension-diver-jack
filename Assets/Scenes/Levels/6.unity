@@ -36408,7 +36408,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1235306714}
   - component: {fileID: 1235306715}
-  - component: {fileID: 1235306716}
   m_Layer: 0
   m_Name: water Modules 7
   m_TagString: waterModule

@@ -42,7 +42,9 @@ public class InvSlot : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         if (GameObject.Find("Player Pref Manager").GetComponent<PlayerPrefManager>().GetUnlockedObjectStatus(imageOfObject.name))
         {
             isSlotActive = true;
-            Instantiate(imageOfObject, GetComponent<RectTransform>());
+            GameObject obj = Instantiate(imageOfObject, GetComponent<RectTransform>());
+            obj.SetActive(true);
+
         }
     }
 

@@ -77,6 +77,7 @@ public class Backpack : MonoBehaviour
     {
         // Remove from map
         GameObject objectOver = GameObject.Find(objectName);
+
         // Sometimes object over is null im guessing it gets called more than once so wrapped in if so it only executes once
         if (objectOver)
         {
@@ -86,10 +87,6 @@ public class Backpack : MonoBehaviour
             prefManager.SetObjectStatus(objectName, 1);
 
             // Update the equip slot to show new object
-
-            // Check backpack slots to see if empty or not
-            //int[] backpackSlots = new int[] { 0, 1, 2 };
-
             bool putInEmptySlot = false;
             foreach (BackpackSlot slot in backpackSlots)
             {

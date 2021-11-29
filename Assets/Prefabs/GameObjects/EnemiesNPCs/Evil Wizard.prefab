@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5327356252430756491}
   - component: {fileID: 5327356252430756500}
   - component: {fileID: 5327356252430756501}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Evil Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}

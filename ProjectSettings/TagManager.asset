@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Jump Boost
+  - airModule
+  - waterModule
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - UI
   - Player
   - Bounds
-  - 
+  - Enemies
   - 
   - 
   - 
@@ -53,6 +55,9 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 2605145249
+    locked: 0
+  - name: Enemies
+    uniqueID: 699867001
     locked: 0
   - name: Player
     uniqueID: 2927436851

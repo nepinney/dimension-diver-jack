@@ -2859,7 +2859,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 999863811}
         m_TargetAssemblyTypeName: buttonControllers, Assembly-CSharp
-        m_MethodName: light
+        m_MethodName: turnOnLight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2916,7 +2916,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 999863806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc5553861dc2c47ee9e29223c8075419, type: 3}
+  m_Script: {fileID: 11500000, guid: 262bd469e44544a34b3d0a99d5f739db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 0}
@@ -5501,7 +5501,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1702095519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc5553861dc2c47ee9e29223c8075419, type: 3}
+  m_Script: {fileID: 11500000, guid: 262bd469e44544a34b3d0a99d5f739db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 0}
@@ -5864,7 +5864,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1790306497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc5553861dc2c47ee9e29223c8075419, type: 3}
+  m_Script: {fileID: 11500000, guid: 262bd469e44544a34b3d0a99d5f739db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 0}
@@ -7656,7 +7656,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2137426408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc5553861dc2c47ee9e29223c8075419, type: 3}
+  m_Script: {fileID: 11500000, guid: 262bd469e44544a34b3d0a99d5f739db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 0}

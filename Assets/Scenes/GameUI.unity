@@ -264,7 +264,7 @@ RectTransform:
   m_Children:
   - {fileID: 1790306498}
   m_Father: {fileID: 464471013}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -435,7 +435,7 @@ Transform:
   m_LocalScale: {x: 0.2702703, y: 0.2702703, z: 0.2702703}
   m_Children: []
   m_Father: {fileID: 464471013}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &128352365
 MonoBehaviour:
@@ -1984,6 +1984,7 @@ RectTransform:
   - {fileID: 2107165632}
   - {fileID: 806753843}
   - {fileID: 564283901}
+  - {fileID: 559994613}
   - {fileID: 99751338}
   - {fileID: 1819835567}
   - {fileID: 1355088260}
@@ -2271,6 +2272,59 @@ MonoBehaviour:
   slotNumber: 0
   isSlotActive: 0
   readyForSwap: 0
+--- !u!1 &559994611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559994613}
+  - component: {fileID: 559994612}
+  m_Layer: 0
+  m_Name: Object Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &559994612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559994611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262bd469e44544a34b3d0a99d5f739db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackScreen: {fileID: 0}
+  player: {fileID: 0}
+  tree: {fileID: 0}
+  door: {fileID: 0}
+  messageField: {fileID: 0}
+  messageBox: {fileID: 0}
+  tilemap: {fileID: 0}
+  text: {fileID: 0}
+  messageBoxActive: 0
+  counting: 0
+--- !u!4 &559994613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559994611}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -400.00003, y: -194.5946, z: 0}
+  m_LocalScale: {x: 0.2702703, y: 0.2702703, z: 0.2702703}
+  m_Children: []
+  m_Father: {fileID: 464471013}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &562804453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,7 +2647,7 @@ RectTransform:
   m_Children:
   - {fileID: 999863807}
   m_Father: {fileID: 464471013}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2785,7 +2839,6 @@ GameObject:
   - component: {fileID: 999863810}
   - component: {fileID: 999863809}
   - component: {fileID: 999863808}
-  - component: {fileID: 999863811}
   m_Layer: 5
   m_Name: Light
   m_TagString: Untagged
@@ -2857,7 +2910,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 999863811}
+      - m_Target: {fileID: 559994612}
         m_TargetAssemblyTypeName: buttonControllers, Assembly-CSharp
         m_MethodName: turnOnLight
         m_Mode: 1
@@ -2907,26 +2960,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 999863806}
   m_CullTransparentMesh: 1
---- !u!114 &999863811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999863806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262bd469e44544a34b3d0a99d5f739db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackScreen: {fileID: 0}
-  player: {fileID: 0}
-  tree: {fileID: 0}
-  door: {fileID: 0}
-  messageField: {fileID: 0}
-  messageBox: {fileID: 0}
-  tilemap: {fileID: 0}
-  text: {fileID: 0}
 --- !u!1 &1013939185
 GameObject:
   m_ObjectHideFlags: 0
@@ -4118,7 +4151,7 @@ RectTransform:
   m_Children:
   - {fileID: 1589270067}
   m_Father: {fileID: 464471013}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4626,7 +4659,7 @@ RectTransform:
   m_Children:
   - {fileID: 1702095520}
   m_Father: {fileID: 464471013}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5370,7 +5403,6 @@ GameObject:
   - component: {fileID: 1702095523}
   - component: {fileID: 1702095522}
   - component: {fileID: 1702095521}
-  - component: {fileID: 1702095524}
   m_Layer: 5
   m_Name: Unlock
   m_TagString: Untagged
@@ -5442,7 +5474,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1702095524}
+      - m_Target: {fileID: 559994612}
         m_TargetAssemblyTypeName: buttonControllers, Assembly-CSharp
         m_MethodName: unlock
         m_Mode: 1
@@ -5492,26 +5524,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702095519}
   m_CullTransparentMesh: 1
---- !u!114 &1702095524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702095519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262bd469e44544a34b3d0a99d5f739db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackScreen: {fileID: 0}
-  player: {fileID: 0}
-  tree: {fileID: 0}
-  door: {fileID: 0}
-  messageField: {fileID: 0}
-  messageBox: {fileID: 0}
-  tilemap: {fileID: 0}
-  text: {fileID: 0}
 --- !u!1 &1748663246
 GameObject:
   m_ObjectHideFlags: 0
@@ -5733,7 +5745,6 @@ GameObject:
   - component: {fileID: 1790306500}
   - component: {fileID: 1790306499}
   - component: {fileID: 1790306501}
-  - component: {fileID: 1790306502}
   m_Layer: 5
   m_Name: Dig
   m_TagString: Untagged
@@ -5843,7 +5854,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1790306502}
+      - m_Target: {fileID: 559994612}
         m_TargetAssemblyTypeName: buttonControllers, Assembly-CSharp
         m_MethodName: dig
         m_Mode: 1
@@ -5855,26 +5866,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1790306502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790306497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262bd469e44544a34b3d0a99d5f739db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackScreen: {fileID: 0}
-  player: {fileID: 0}
-  tree: {fileID: 0}
-  door: {fileID: 0}
-  messageField: {fileID: 0}
-  messageBox: {fileID: 0}
-  tilemap: {fileID: 0}
-  text: {fileID: 0}
 --- !u!1 &1808456783
 GameObject:
   m_ObjectHideFlags: 0
@@ -5979,7 +5970,7 @@ RectTransform:
   m_Children:
   - {fileID: 2137426409}
   m_Father: {fileID: 464471013}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7525,7 +7516,6 @@ GameObject:
   - component: {fileID: 2137426412}
   - component: {fileID: 2137426411}
   - component: {fileID: 2137426410}
-  - component: {fileID: 2137426413}
   m_Layer: 5
   m_Name: Chop
   m_TagString: Untagged
@@ -7597,7 +7587,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2137426413}
+      - m_Target: {fileID: 559994612}
         m_TargetAssemblyTypeName: buttonControllers, Assembly-CSharp
         m_MethodName: chop
         m_Mode: 1
@@ -7647,26 +7637,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137426408}
   m_CullTransparentMesh: 1
---- !u!114 &2137426413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137426408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262bd469e44544a34b3d0a99d5f739db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackScreen: {fileID: 0}
-  player: {fileID: 0}
-  tree: {fileID: 0}
-  door: {fileID: 0}
-  messageField: {fileID: 0}
-  messageBox: {fileID: 0}
-  tilemap: {fileID: 0}
-  text: {fileID: 0}
 --- !u!1 &2137534387
 GameObject:
   m_ObjectHideFlags: 0

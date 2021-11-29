@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using TMPro;
+using System.Collections;
 
 public class buttonControllers : MonoBehaviour
 {
@@ -18,6 +17,15 @@ public class buttonControllers : MonoBehaviour
     public TextMeshPro text;
     Scene currentScene;
     string sceneName;
+    public bool messageBoxActive;
+    public bool counting = false;
+
+    private void OnEnable()
+    {
+        messageField = GameObject.Find("MessageText");
+        messageBox = GameObject.Find("MessageBox");
+        messageBox.SetActive(false);
+    }
 
     // dig method allowed only in level 1
     public void dig(){
@@ -35,19 +43,21 @@ public class buttonControllers : MonoBehaviour
                 tilemap.SetTile(new Vector3Int(24,-8,0), null);
             } else {
                 // if not in a location that allows digging
-                messageBox = GameObject.Find("MessageBox");
+                //messageBox = GameObject.Find("MessageBox");
+                //messageField = GameObject.Find("MessageText");
                 messageBox.SetActive(true);
-                messageField = GameObject.Find("MessageText");
                 messageField.GetComponent<TextMeshProUGUI>().text = "Can't Dig Here";
-                Debug.Log("Can't Dig Here");
+                messageBoxActive = true;
+                //Debug.Log("Can't Dig Here");
             }
         } else {
                 // display message if not near in a digging level
-                messageBox = GameObject.Find("MessageBox");
+                //messageBox = GameObject.Find("MessageBox");
+                //messageField = GameObject.Find("MessageText");
                 messageBox.SetActive(true);
-                messageField = GameObject.Find("MessageText");
                 messageField.GetComponent<TextMeshProUGUI>().text = "Can't Dig in This Level";
-                Debug.Log("Can't Dig in this scene");
+                messageBoxActive = true;
+                //Debug.Log("Can't Dig in this scene");
         }
 
     }
@@ -63,11 +73,12 @@ public class buttonControllers : MonoBehaviour
             blackScreen.SetActive(false);
         } else {
             // if not in a level that requires a flashlight
-            messageBox = GameObject.Find("MessageBox");
+            //messageBox = GameObject.Find("MessageBox");
             messageBox.SetActive(true);
-            messageField = GameObject.Find("MessageText");
+            //messageField = GameObject.Find("MessageText");
             messageField.GetComponent<TextMeshProUGUI>().text = "No Use for a Flashlight";
-            Debug.Log("No use for a flashlight");
+            messageBoxActive = true;
+            //Debug.Log("No use for a flashlight");
         }
     }
 
@@ -101,20 +112,22 @@ public class buttonControllers : MonoBehaviour
                 tree.SetActive(false);
             } else {
                 // display message if not near a tree
-                messageBox = GameObject.Find("MessageBox");
+                //messageBox = GameObject.Find("MessageBox");
                 messageBox.SetActive(true);
-                messageField = GameObject.Find("MessageText");
+                //messageField = GameObject.Find("MessageText");
                 messageField.GetComponent<TextMeshProUGUI>().text = "Not Near a Tree";
-                Debug.Log("Not Near a Tree");
+                messageBoxActive = true;
+                //Debug.Log("Not Near a Tree");
             }
 
         } else {
             // if not in a level that requires axe
-            messageBox = GameObject.Find("MessageBox");
+            //messageBox = GameObject.Find("MessageBox");
             messageBox.SetActive(true);
-            messageField = GameObject.Find("MessageText");
+            //messageField = GameObject.Find("MessageText");
             messageField.GetComponent<TextMeshProUGUI>().text = "Nothing to Chop";
-            Debug.Log("Nothing to Chop");
+            messageBoxActive = true;
+            //Debug.Log("Nothing to Chop");
         }
 
     }
@@ -135,11 +148,11 @@ public class buttonControllers : MonoBehaviour
                 door.SetActive(false);
             } else {
                 // if not near a door
-                messageBox = GameObject.Find("MessageBox");
+                //messageBox = GameObject.Find("MessageBox");
                 messageBox.SetActive(true);
-                messageField = GameObject.Find("MessageText");
+                //messageField = GameObject.Find("MessageText");
                 messageField.GetComponent<TextMeshProUGUI>().text = "No Door Found";
-                Debug.Log("No door found");
+                messageBoxActive = true;
             }
         
         } else if (sceneName == "5"){
@@ -151,19 +164,49 @@ public class buttonControllers : MonoBehaviour
                 door.SetActive(false);
             } else {
                 // if not near a door
-                messageBox = GameObject.Find("MessageBox");
+                //messageBox = GameObject.Find("MessageBox");
                 messageBox.SetActive(true);
-                messageField = GameObject.Find("MessageText");
+                //messageField = GameObject.Find("MessageText");
                 messageField.GetComponent<TextMeshProUGUI>().text = "No Door Found";
-                Debug.Log("No Door Found");
+                messageBoxActive = true;
             }
         } else {
             // if not in a level with doors
-            messageBox = GameObject.Find("MessageBox");
+            //messageBox = GameObject.Find("MessageBox");
             messageBox.SetActive(true);
-            messageField = GameObject.Find("MessageText");
+            //messageField = GameObject.Find("MessageText");
             messageField.GetComponent<TextMeshProUGUI>().text = "Nothing in Level to Unlock";
-            Debug.Log("Nothing in Level to Unlock");
+            messageBoxActive = true;
+            //Debug.Log("Nothing in Level to Unlock");
+        }
+    }
+
+    IEnumerator HideMessageDelay()
+    {
+        //Print the time of when the function is first called.
+        //Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(2);
+
+        //After we have waited 2 seconds print the time again.
+        if (messageBox.activeSelf)
+        {
+            Debug.Log("Trying to deactivate message box");
+            messageField.GetComponent<TextMeshProUGUI>().text = "";
+            messageBox.SetActive(false);
+            counting = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (messageBoxActive && !counting)
+        {
+            Debug.Log("Starting Coroutine!");
+            counting = true;
+            messageBoxActive = false;
+            StartCoroutine(HideMessageDelay());
         }
     }
 }

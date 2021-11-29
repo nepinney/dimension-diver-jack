@@ -73,6 +73,8 @@ public class UIManager : Singleton<UIManager>
         messageBox = GameObject.Find("MessageBox");
         messageText = GameObject.Find("MessageText");
 
+        //messageBox.SetActive(false);
+
         // If on one of the levels, deactivate the items menu
         if (SceneManager.GetActiveScene().name != "Homebase")
         {

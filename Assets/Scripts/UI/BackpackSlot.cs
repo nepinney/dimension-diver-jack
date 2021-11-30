@@ -46,7 +46,6 @@ public class BackpackSlot : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
 
     public void OnPointerUp(PointerEventData data)
     {
-        Debug.Log("Slot selected" + name);
         // if greater than 1 than it has a image in the slot meaning a object is selected for use
         if (SceneManager.GetActiveScene().name != "Homebase")
         {
@@ -84,6 +83,9 @@ public class BackpackSlot : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
         activeClone.SetActive(true);
         RemoveHighlight();
         readyForSwap = false;
+
+        //Hide previous item button
+
     }
 
     public void HighlightGreen()

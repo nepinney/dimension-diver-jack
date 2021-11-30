@@ -103,6 +103,7 @@ public class Backpack : MonoBehaviour
                 // Put item in first slot
                 backpackSlots[0].ReplaceItem(objectName);
                 //backpackSlots[0].AddItemToSlot(objectName);
+                HidePreviousItemButtons();
             }
         }
     }
@@ -146,7 +147,6 @@ public class Backpack : MonoBehaviour
 
     private void ShowControls(string objectName)
     {
-        Debug.Log("Trying to show controls");
         switch (objectName)
         {
             case "Shovel":
@@ -174,5 +174,13 @@ public class Backpack : MonoBehaviour
                 keyControls.SetActive(false);
                 break;
         }
+    }
+
+    private void HidePreviousItemButtons()
+    {
+        shovelControls.SetActive(false);
+        axeControls.SetActive(false);
+        flashlightControls.SetActive(false);
+        keyControls.SetActive(false);
     }
 }

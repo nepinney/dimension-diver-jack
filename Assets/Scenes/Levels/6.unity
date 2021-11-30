@@ -34221,7 +34221,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 721773352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c63fff0f5e124144bcf3a46d781fe80, type: 3}
+  m_Script: {fileID: 11500000, guid: 6892ca170a4d24352a5efeea6f76129d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xValue: 45
@@ -35263,7 +35263,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 865571701}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c63fff0f5e124144bcf3a46d781fe80, type: 3}
+  m_Script: {fileID: 11500000, guid: 6892ca170a4d24352a5efeea6f76129d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xValue: -5
@@ -35720,7 +35720,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1034962696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c63fff0f5e124144bcf3a46d781fe80, type: 3}
+  m_Script: {fileID: 11500000, guid: 6892ca170a4d24352a5efeea6f76129d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xValue: 15
@@ -36408,6 +36408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1235306714}
   - component: {fileID: 1235306715}
+  - component: {fileID: 1235306716}
   m_Layer: 0
   m_Name: water Modules 7
   m_TagString: waterModule
@@ -36480,6 +36481,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1235306716
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235306713}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.25, y: 2.25}
+    newSize: {x: 2.25, y: 2.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.25, y: 2.25}
+  m_EdgeRadius: 0
 --- !u!1 &1306306664
 GameObject:
   m_ObjectHideFlags: 0
@@ -36605,7 +36632,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1351312816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c63fff0f5e124144bcf3a46d781fe80, type: 3}
+  m_Script: {fileID: 11500000, guid: 6892ca170a4d24352a5efeea6f76129d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xValue: 35
@@ -38419,7 +38446,7 @@ GameObject:
   - component: {fileID: 1572413973}
   m_Layer: 0
   m_Name: assember
-  m_TagString: Untagged
+  m_TagString: assembler
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38448,7 +38475,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.043211937, y: 0}
@@ -39199,7 +39226,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2039373768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c63fff0f5e124144bcf3a46d781fe80, type: 3}
+  m_Script: {fileID: 11500000, guid: 6892ca170a4d24352a5efeea6f76129d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xValue: -5
@@ -39301,7 +39328,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2126441225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c63fff0f5e124144bcf3a46d781fe80, type: 3}
+  m_Script: {fileID: 11500000, guid: 6892ca170a4d24352a5efeea6f76129d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xValue: -5
@@ -39468,7 +39495,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9047619, y: 1}
+    m_SensorSize: {x: 1.6237373, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

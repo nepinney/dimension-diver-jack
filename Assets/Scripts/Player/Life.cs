@@ -26,8 +26,11 @@ public class Life : MonoBehaviour
             deathSound.Play();
             restart = true;
             timer = 0.0f;
-        }
-        else if (col.name == "Level Portal")
+        } else if (col.tag == "spike"){
+            deathSound.Play();
+            restart = true;
+            timer = 0.0f;
+        } else if (col.name == "Level Portal")
         {
             PlayerPrefManager prefManager = GameObject.Find("Player Pref Manager").GetComponent<PlayerPrefManager>();
             int currentLevel = prefManager.GetCurrentLevelProgress();

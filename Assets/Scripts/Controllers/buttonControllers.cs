@@ -20,6 +20,11 @@ public class buttonControllers : MonoBehaviour
     public bool messageBoxActive;
     public bool counting = false;
 
+    public GameObject unlockSound;
+    public GameObject digSound;
+    public GameObject chopSound;
+    public GameObject lightSound;
+
     private void OnEnable()
     {
         messageField = GameObject.Find("MessageText");
@@ -34,13 +39,17 @@ public class buttonControllers : MonoBehaviour
         sceneName = currentScene.name;
 
         if(sceneName == "1"){
+            // find the player and sounds
             player = GameObject.Find("Player");
+            digSound = GameObject.Find("Dig Sound");
             // if player location matches location allowed to dig
             if(player.transform.position.x <= 36 && player.transform.position.x >= 31){
                 tilemap = GameObject.Find("Level1Ground").GetComponent<Tilemap> ();
                 // remove the tiles
                 tilemap.SetTile(new Vector3Int(23,-8,0), null);
                 tilemap.SetTile(new Vector3Int(24,-8,0), null);
+                // play the dig sound
+                digSound.GetComponent<AudioSource>().Play();
             } else {
                 // if not in a location that allows digging
                 //messageBox = GameObject.Find("MessageBox");
@@ -71,6 +80,8 @@ public class buttonControllers : MonoBehaviour
             // remove the black screen
             blackScreen = GameObject.Find("blackScreen1");
             blackScreen.SetActive(false);
+            lightSound = GameObject.Find("Light Sound");
+            lightSound.GetComponent<AudioSource>().Play();
         } else {
             // if not in a level that requires a flashlight
             //messageBox = GameObject.Find("MessageBox");
@@ -92,24 +103,31 @@ public class buttonControllers : MonoBehaviour
             player = GameObject.Find("Player");
             // if player is near each tree obstacle, hide it
             // player will be able to pass through
+            chopSound = GameObject.Find("Chop Sound");
             if(player.transform.position.x <= 7 && player.transform.position.x >= 2){
                 tree = GameObject.Find("Tree Obstacle 1");
                 tree.SetActive(false);
+                chopSound.GetComponent<AudioSource>().Play();
             } else if(player.transform.position.x <= 21 && player.transform.position.x >= 16){
                 tree = GameObject.Find("Tree Obstacle 2");
                 tree.SetActive(false);
+                chopSound.GetComponent<AudioSource>().Play();
             } else if(player.transform.position.x <= 61 && player.transform.position.x >= 55){
                 tree = GameObject.Find("Tree Obstacle 3");
                 tree.SetActive(false);
+                chopSound.GetComponent<AudioSource>().Play();
             } else if (player.transform.position.x <= 95 && player.transform.position.x >= 90){
                 tree = GameObject.Find("Tree Obstacle 4");
                 tree.SetActive(false);
+                chopSound.GetComponent<AudioSource>().Play();
             } else if (player.transform.position.x <= 113 && player.transform.position.x >= 107){
                 tree = GameObject.Find("Tree Obstacle 5");
                 tree.SetActive(false);
+                chopSound.GetComponent<AudioSource>().Play();
             } else if (player.transform.position.x <= 151 && player.transform.position.x >= 145){
                 tree = GameObject.Find("Tree Obstacle 6");
                 tree.SetActive(false);
+                chopSound.GetComponent<AudioSource>().Play();
             } else {
                 // display message if not near a tree
                 //messageBox = GameObject.Find("MessageBox");
@@ -146,6 +164,8 @@ public class buttonControllers : MonoBehaviour
                 // hide shed
                 // player can pass through
                 door.SetActive(false);
+                unlockSound = GameObject.Find("Unlock Sound");
+                unlockSound.GetComponent<AudioSource>().Play();
             } else {
                 // if not near a door
                 //messageBox = GameObject.Find("MessageBox");
@@ -162,6 +182,8 @@ public class buttonControllers : MonoBehaviour
                 // hide door
                 // player can pass through
                 door.SetActive(false);
+                unlockSound = GameObject.Find("Unlock Sound");
+                unlockSound.GetComponent<AudioSource>().Play();
             } else {
                 // if not near a door
                 //messageBox = GameObject.Find("MessageBox");

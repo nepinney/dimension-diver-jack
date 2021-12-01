@@ -13,6 +13,7 @@ public class ItemsUIManager : MonoBehaviour
     private Transform itemsRackTransform;
 
     private Vector3 backpackOriginalPosition;
+    //private bool itemsMenuActive;
 
     public InvSlot[] inventorySlots;
     private string selectedSlot;
@@ -66,6 +67,7 @@ public class ItemsUIManager : MonoBehaviour
             itemUITransform = itemUI.GetComponent<RectTransform>();
             itemsRackTransform = GameObject.Find("Items rack").GetComponent<Transform>();
             backpack = GameObject.Find("Player").GetComponent<Backpack>();
+            backpackOriginalPosition = GameObject.Find("Backpack").GetComponent<RectTransform>().position;
 
             backpack.OnBackpackSwap += DeactivateActiveSlot;
             interactableObject.OnOverObject += HandleInteraction;
@@ -105,7 +107,6 @@ public class ItemsUIManager : MonoBehaviour
         {
             // Activate the items UI
             itemUI.SetActive(true);
-            backpackOriginalPosition = GameObject.Find("Backpack").GetComponent<RectTransform>().position;
         }
     }
 
@@ -152,6 +153,14 @@ public class ItemsUIManager : MonoBehaviour
                 Vector3 newPosition = new Vector3(objectToFollow.position.x, objectToFollow.position.y, 0);
 
                 GameObject.Find("Backpack").GetComponent<RectTransform>().position = newPosition;
+
+                player.GetComponent<TouchInputController>().DeactivateMiddleTouch();
+
+            }
+            if (!itemUI.activeSelf && GameObject.Find("Backpack").GetComponent<RectTransform>().position != backpackOriginalPosition)
+            {
+                GameObject.Find("Backpack").GetComponent<RectTransform>().position = backpackOriginalPosition;
+                player.GetComponent<TouchInputController>().ReactivateMiddleTouch();
             }
         }
     }

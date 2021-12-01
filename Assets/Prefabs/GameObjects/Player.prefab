@@ -174,7 +174,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fd6da9936c6664caea63abd54bd24d39, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -281,6 +281,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8957763738965482302}
   walkSound: {fileID: 3072629170311792168}
   boostSound: {fileID: 9049958748124463041}
+  buttonController: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:

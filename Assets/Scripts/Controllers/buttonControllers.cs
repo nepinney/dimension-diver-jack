@@ -203,6 +203,13 @@ public class buttonControllers : MonoBehaviour
         }
     }
 
+    public void ActivateMessage(string alert)
+    {
+        messageBox.SetActive(true);
+        messageField.GetComponent<TextMeshProUGUI>().text = alert;
+        messageBoxActive = true;
+    }
+
     IEnumerator HideMessageDelay()
     {
         //Print the time of when the function is first called.

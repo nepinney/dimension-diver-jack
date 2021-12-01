@@ -748,9 +748,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: RC car (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3341736541374896709, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
+      propertyPath: m_TagString
+      value: spike
+      objectReference: {fileID: 0}
     - target: {fileID: 3341736541374896712, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
       propertyPath: m_FlipX
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341736541374896713, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3341736541374896719, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
       propertyPath: m_RootOrder
@@ -2858,8 +2866,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: RC car
       objectReference: {fileID: 0}
+    - target: {fileID: 3341736541374896709, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
+      propertyPath: m_TagString
+      value: spike
+      objectReference: {fileID: 0}
     - target: {fileID: 3341736541374896712, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
       propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341736541374896713, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3341736541374896719, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
@@ -3437,9 +3453,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: RC car (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3341736541374896709, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
+      propertyPath: m_TagString
+      value: spike
+      objectReference: {fileID: 0}
     - target: {fileID: 3341736541374896712, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
       propertyPath: m_FlipX
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341736541374896713, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3341736541374896719, guid: a55c7360d3bdadd498fc479cf0c8d97a, type: 3}
       propertyPath: m_RootOrder
@@ -5208,7 +5232,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 2.0555556, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

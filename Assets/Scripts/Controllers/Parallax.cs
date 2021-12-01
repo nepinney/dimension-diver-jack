@@ -29,7 +29,7 @@ public class Parallax : MonoBehaviour
         sizeY = backgroundImage.height / sprite.pixelsPerUnit * scale;
     }
 
-    void FixedUpdate()
+    void Update()
     {
 
         // determine the change in camera position

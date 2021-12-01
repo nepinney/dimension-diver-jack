@@ -20,6 +20,8 @@ public class TouchInputController : MonoBehaviour
     private int jump = 5;
     private int waiting = -1;
 
+    private bool middleTouchActive = true;
+
 
     public void Awake()
     {
@@ -247,12 +249,22 @@ public class TouchInputController : MonoBehaviour
 
         if (touchPosition.x > Screen.width / 3 && touchPosition.x < (Screen.width - (Screen.width / 3)))
         {
-            if (firstTouch != jump && secondTouch != jump)
+            if (firstTouch != jump && secondTouch != jump && middleTouchActive)
             {
                 input_manager.ActivatePlayerJump();
                 return jump;
             }
         }
         return 0;
+    }
+
+    public void DeactivateMiddleTouch()
+    {
+        middleTouchActive = false;
+    }
+
+    public void ReactivateMiddleTouch()
+    {
+        middleTouchActive = true;
     }
 }

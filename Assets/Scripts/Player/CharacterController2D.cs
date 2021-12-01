@@ -79,8 +79,10 @@ public class CharacterController2D : MonoBehaviour
 
 		if (!buttonController)
         {
-			buttonController = GameObject.Find("Object Buttons").GetComponent<buttonControllers>();
-        }
+			if (GameObject.Find("Object Buttons").GetComponent<buttonControllers>())
+				buttonController = GameObject.Find("Object Buttons").GetComponent<buttonControllers>();
+
+		}
 	}
 
 	// boost activate

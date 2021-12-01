@@ -238,4 +238,17 @@ public class buttonControllers : MonoBehaviour
             StartCoroutine(HideMessageDelay());
         }
     }
+
+    public void Skip()
+    {
+        GameStateManager gameManager = GameObject.Find("Game State Manager").GetComponent<GameStateManager>();
+        // Press "T" for quick access to load level from Hombase
+        if (SceneManager.GetActiveScene().name != "Homebase")
+        {
+            PlayerPrefManager prefManager = GameObject.Find("Player Pref Manager").GetComponent<PlayerPrefManager>();
+            prefManager.IncrementLevelProgress();
+            gameManager.LoadLevel(prefManager.GetCurrentLevelProgress());
+            gameManager.Resume();
+        }
+    }
 }

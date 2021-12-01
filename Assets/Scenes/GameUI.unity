@@ -2311,6 +2311,10 @@ MonoBehaviour:
   text: {fileID: 0}
   messageBoxActive: 0
   counting: 0
+  unlockSound: {fileID: 0}
+  digSound: {fileID: 0}
+  chopSound: {fileID: 0}
+  lightSound: {fileID: 0}
 --- !u!4 &559994613
 Transform:
   m_ObjectHideFlags: 0
@@ -4155,7 +4159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 177.50002, y: 346}
+  m_AnchoredPosition: {x: 177.50002, y: 377.21}
   m_SizeDelta: {x: 445, y: 55.0554}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1217963324

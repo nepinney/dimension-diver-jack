@@ -203,6 +203,13 @@ public class buttonControllers : MonoBehaviour
         }
     }
 
+    public void ActivateMessage(string alert)
+    {
+        messageBox.SetActive(true);
+        messageField.GetComponent<TextMeshProUGUI>().text = alert;
+        messageBoxActive = true;
+    }
+
     IEnumerator HideMessageDelay()
     {
         //Print the time of when the function is first called.
@@ -229,6 +236,19 @@ public class buttonControllers : MonoBehaviour
             counting = true;
             messageBoxActive = false;
             StartCoroutine(HideMessageDelay());
+        }
+    }
+
+    public void Skip()
+    {
+        GameStateManager gameManager = GameObject.Find("Game State Manager").GetComponent<GameStateManager>();
+        // Press "T" for quick access to load level from Hombase
+        if (SceneManager.GetActiveScene().name != "Homebase")
+        {
+            PlayerPrefManager prefManager = GameObject.Find("Player Pref Manager").GetComponent<PlayerPrefManager>();
+            prefManager.IncrementLevelProgress();
+            gameManager.LoadLevel(prefManager.GetCurrentLevelProgress());
+            gameManager.Resume();
         }
     }
 }

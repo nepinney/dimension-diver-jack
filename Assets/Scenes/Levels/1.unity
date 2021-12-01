@@ -665,7 +665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7521765291924850633, guid: dc54d41d07cc1438e8c4ff363772fae7, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc54d41d07cc1438e8c4ff363772fae7, type: 3}
@@ -842,6 +842,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1675142149}
     m_Modifications:
+    - target: {fileID: 3355088914966418728, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355088914966418729, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3355088914966418730, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -893,6 +901,10 @@ PrefabInstance:
     - target: {fileID: 3355088914966418733, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
       propertyPath: m_Name
       value: Groot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355088914966418733, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
+      propertyPath: m_TagString
+      value: spike
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
@@ -1175,6 +1187,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1675142149}
     m_Modifications:
+    - target: {fileID: 3355088914966418728, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355088914966418729, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3355088914966418731, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1222,6 +1242,10 @@ PrefabInstance:
     - target: {fileID: 3355088914966418733, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
       propertyPath: m_Name
       value: Groot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355088914966418733, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
+      propertyPath: m_TagString
+      value: spike
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d6d31a68637fe4fbe471030ed1c11d, type: 3}
@@ -2065,7 +2089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7521765291924850633, guid: dc54d41d07cc1438e8c4ff363772fae7, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc54d41d07cc1438e8c4ff363772fae7, type: 3}
@@ -2135,7 +2159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7521765291924850633, guid: dc54d41d07cc1438e8c4ff363772fae7, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc54d41d07cc1438e8c4ff363772fae7, type: 3}
@@ -8303,7 +8327,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6237373, y: 1}
+    m_SensorSize: {x: 2.0555556, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9519,7 +9543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7521765291924850633, guid: dc54d41d07cc1438e8c4ff363772fae7, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc54d41d07cc1438e8c4ff363772fae7, type: 3}

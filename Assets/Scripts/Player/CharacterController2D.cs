@@ -31,8 +31,10 @@ public class CharacterController2D : MonoBehaviour
 	private int waterCounter = 0;
     private int airCounter = 0;
 
-	public GameObject messageField;
-    public GameObject messageBox;
+
+	public buttonControllers buttonController;
+	//private GameObject messageField;
+ //   private GameObject messageBox;
 
 	[Header("Events")]
 	[Space]
@@ -74,13 +76,20 @@ public class CharacterController2D : MonoBehaviour
 				boostTimer10s = 0;
 			}
 		}
+
+		if (!buttonController)
+        {
+			if (GameObject.Find("Object Buttons").GetComponent<buttonControllers>())
+				buttonController = GameObject.Find("Object Buttons").GetComponent<buttonControllers>();
+
+		}
 	}
 
 	// boost activate
 	void OnTriggerEnter2D(Collider2D boost){
 
-		messageField = GameObject.Find("MessageText");
-        messageBox = GameObject.Find("MessageBox");
+		//messageField = GameObject.Find("MessageText");
+  //      messageBox = GameObject.Find("MessageBox");
 
 		if(jumpBoosting || speedBoosting){
 			// restart timer if still boosting
@@ -107,8 +116,10 @@ public class CharacterController2D : MonoBehaviour
         	Destroy (boost.gameObject);
         	waterCounter++;
 
-			messageBox.SetActive(true);
-            messageField.GetComponent<TextMeshProUGUI>().text = (10 - waterCounter) + " Water Modules Left";
+			buttonController.ActivateMessage(10 - waterCounter + " Water Modules Left");
+
+			//messageBox.SetActive(true);
+   //         messageField.GetComponent<TextMeshProUGUI>().text = (10 - waterCounter) + " Water Modules Left";
     	}
 
     	if (boost.gameObject.tag == "airModule") {
@@ -116,27 +127,34 @@ public class CharacterController2D : MonoBehaviour
         	Destroy (boost.gameObject);
         	airCounter++;
 
-			messageBox.SetActive(true);
-            messageField.GetComponent<TextMeshProUGUI>().text = (10 - airCounter) + " Air Modules Left";
+			buttonController.ActivateMessage((10 - airCounter) + " Air Modules Left");
+
+			//messageBox.SetActive(true);
+   //         messageField.GetComponent<TextMeshProUGUI>().text = (10 - airCounter) + " Air Modules Left";
     	}
 
 		if (boost.gameObject.tag == "assembler"){
 			// if player has collected all air but not all water
 			if (waterCounter < 10 && airCounter == 10){
-				messageBox.SetActive(true);
-            	messageField.GetComponent<TextMeshProUGUI>().text = "Missing Water Modules";
-			// if player has collected all water but not all air
+
+				buttonController.ActivateMessage("Missing Water Modules");
+				//messageBox.SetActive(true);
+				//        	messageField.GetComponent<TextMeshProUGUI>().text = "Missing Water Modules";
+				// if player has collected all water but not all air
 			} else if (waterCounter == 10 && airCounter < 10){
-				messageBox.SetActive(true);
-            	messageField.GetComponent<TextMeshProUGUI>().text = "Missing Air Modules";
-			// if player is missing some of both types
+				buttonController.ActivateMessage("Missing Air Modules");
+				//messageBox.SetActive(true);
+				//        	messageField.GetComponent<TextMeshProUGUI>().text = "Missing Air Modules";
+				// if player is missing some of both types
 			} else if (waterCounter < 10 && airCounter < 10){
-				messageBox.SetActive(true);
-            	messageField.GetComponent<TextMeshProUGUI>().text = "Missing Water and Air Modules";
+				buttonController.ActivateMessage("Missing Air and Water Modules");
+				//messageBox.SetActive(true);
+    //        	messageField.GetComponent<TextMeshProUGUI>().text = "Missing Water and Air Modules";
 			// player has completed the game
 			} else if (waterCounter == 10 && airCounter == 10){
-				messageBox.SetActive(true);
-            	messageField.GetComponent<TextMeshProUGUI>().text = "Congratulations You Win!";
+				buttonController.ActivateMessage("Congratulations You Win!");
+				//messageBox.SetActive(true);
+				//        	messageField.GetComponent<TextMeshProUGUI>().text = "Congratulations You Win!";
 			}
 		}
 	}

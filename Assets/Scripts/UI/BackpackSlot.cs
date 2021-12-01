@@ -36,6 +36,7 @@ public class BackpackSlot : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
             isSlotActive = true;
             GameObject slotObject = prefManager.inventoryObjects[prefManager.GetBackpackSlotStatus(slotNumber)];
             activeClone = Instantiate(slotObject, GetComponent<RectTransform>());
+            activeClone.SetActive(true);
         }
     }
 

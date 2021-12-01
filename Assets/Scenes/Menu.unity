@@ -4093,8 +4093,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -145.5, y: 0}
-  m_SizeDelta: {x: 85.304016, y: 34.4154}
+  m_AnchoredPosition: {x: -117.750046, y: 0}
+  m_SizeDelta: {x: 140.8039, y: 34.4154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1125084774441203557
 GameObject:
@@ -6236,7 +6236,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 115.7, y: 0}
-  m_SizeDelta: {x: 83.4713, y: 34.4154}
+  m_SizeDelta: {x: 236.0959, y: 34.4154}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1125084775200017459
 GameObject:
@@ -6999,7 +6999,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Two
+  m_text: Buttons
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 784e69e9964da415a9abf7f90b17e6bc, type: 2}
   m_sharedMaterial: {fileID: -267555145077140744, guid: 784e69e9964da415a9abf7f90b17e6bc, type: 2}
@@ -7096,7 +7096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: One
+  m_text: Touch sections
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 784e69e9964da415a9abf7f90b17e6bc, type: 2}
   m_sharedMaterial: {fileID: -267555145077140744, guid: 784e69e9964da415a9abf7f90b17e6bc, type: 2}

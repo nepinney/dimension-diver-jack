@@ -715,9 +715,17 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5327356252430756491, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5327356252430756502, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
       propertyPath: m_Name
       value: Evil Wizard (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327356252430756502, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
+      propertyPath: m_TagString
+      value: spike
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
@@ -5693,9 +5701,17 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5327356252430756491, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5327356252430756502, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
       propertyPath: m_Name
       value: Evil Wizard (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327356252430756502, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
+      propertyPath: m_TagString
+      value: spike
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
@@ -7802,9 +7818,17 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5327356252430756491, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5327356252430756502, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
       propertyPath: m_Name
       value: Evil Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327356252430756502, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
+      propertyPath: m_TagString
+      value: spike
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab720f9c3db83741a9f52c20456e0c3, type: 3}
@@ -8288,7 +8312,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6237373, y: 1}
+    m_SensorSize: {x: 2.0555556, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8441,7 +8465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4994876616686155861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2762766, y: 2.4061399, z: -10}
+  m_LocalPosition: {x: 6.0831137, y: 2.41216, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4994876617610026472}
